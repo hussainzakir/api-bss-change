@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/data/jpa 
+	http://www.springframework.org/schema/data/jpa/spring-jpa-1.1.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-3.1.xsd 
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:component-scan
+		base-package="com.trinet.ambis">
+		<context:exclude-filter type="assignable" expression="com.trinet.ambis.configuration.MicroServiceMessageConfigImpl" />
+        <context:exclude-filter type="assignable" expression="com.trinet.ambis.configuration.MessagingConfig"/>
+        <context:exclude-filter type="assignable" expression="com.trinet.ambis.persistence.dao.ps.impl.SupplementalAuthDaoImpl"/>
+	</context:component-scan>
+
+
+	<bean id="bis-hrp" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="javax.persistence.EntityManagerFactory" />
+	</bean>
+
+	<bean id="cacheService" class="org.mockito.Mockito" factory-method="mock"> 
+	    <constructor-arg value="com.trinet.ambis.service.CacheService" /> 
+	</bean> 
+	
+	<bean id="jedisPool" class="org.mockito.Mockito" factory-method="mock"> 
+	    <constructor-arg value="redis.clients.jedis.JedisPool" /> 
+	</bean> 
+	
+	<!-- <bean id="securityUtilComponent" class="org.mockito.Mockito" factory-method="mock"> 
+	    <constructor-arg value="com.trinet.security.util.SecurityUtilComponent" /> 
+	</bean>  -->
+
+	<bean id="restOperations" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="org.springframework.web.client.RestOperations" />
+	</bean>
+
+	<bean id="strategyDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyDao" />
+	</bean>
+
+	<bean id="employerEmployeePlansMappingDao"
+		class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployerEmployeePlansMappingDao" />
+	</bean>
+
+	<bean id="mandatoryRegionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.MandatoryRegionDao" />
+	</bean>
+
+	<bean id="submitStatusDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.SubmitStatusDao" />
+	</bean>
+	
+	<bean id="submitErrorDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.SubmitErrorDao" />
+	</bean>
+	
+	<bean id="processStatusDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.ProcessStatusDao" />
+	</bean>
+	
+
+	<bean id="companyDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.CompanyDao" />
+	</bean>
+	
+	<bean id="strategyFundingDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingDataDao" />
+	</bean>
+	
+	<bean id="commonDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.CommonDataDao" />
+	</bean>
+	
+
+	<bean id="psDao" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.PsDao" />
+	</bean>
+
+	<bean id="hrpDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.HrpDao" />
+	</bean>
+	<bean id="hqOverrideDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.HqOverrideDao" />
+	</bean>
+	    <bean id="bssStatusDetailsDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.BSSStatusDetailsDao" />
+	</bean>
+
+	<bean id="psCompanyDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.PsCompanyDao" />
+	</bean>
+
+	<bean id="searchCompanyDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.SearchCompanyDao" />
+	</bean>
+	<bean id="personDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PersonDao" />
+	</bean>
+	<bean id="personService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.PersonService" />
+	</bean>
+
+	<bean id="schedTblDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.SchedTblDao" />
+	</bean>
+	
+	<bean id="strategyBasePlanLimitsDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyBasePlanLimitsDao" />
+	</bean>
+
+	<bean id="schedTblDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.SchedTblDataDao" />
+	</bean>
+
+	<bean id="conversionService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="org.springframework.core.convert.ConversionService" />
+	</bean>
+	<bean id="strategyFundingDetailService"
+		class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.StrategyFundingDetailService" />
+	</bean>
+
+	<bean id="employeeDataService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.EmployeeDataService" />
+	</bean>
+
+	<bean id="employeeBenefitGroupService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.EmployeeBenefitGroupService" />
+	</bean>
+
+	
+	<bean id="employeeBenefitGroupDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployeeBenefitGroupDao" />
+	</bean>
+
+	<bean id="employeeSelectionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployeeSelectionDao" />
+	</bean>
+
+	<bean id="portfolioRuleDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PortfolioRuleDao" />
+	</bean>
+
+	<bean id="realmDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmDataDao" />
+	</bean>
+
+	<bean id="templateFundingDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.TemplateFundingDao" />
+	</bean>
+
+	<bean id="realmPlanYearDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmPlanYearDao" />
+	</bean>
+
+	<bean id="eePlanAssignmentDao" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.persistence.dao.hrp.EePlanAssignmentDao" />
+	</bean>
+	
+	<bean id="emplDefaultPlanAssignmentDao" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.persistence.dao.hrp.EmplDefaultPlanAssignmentDao" />
+	</bean>
+	
+	<bean id="strategyDefaultPlanDao" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.persistence.dao.hrp.StrategyDefaultPlanDao" />
+	</bean>
+
+	<bean id="defaultPlanDataDao" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.persistence.dao.hrp.DefaultPlanDataDao" />
+	</bean>
+
+	<bean id="realmPlanYearService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.RealmPlanYearService" />
+	</bean>
+
+	<bean id="schedMidYearFundingDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.SchedMidYearFundingDao" />
+	</bean>
+
+	<bean id="companyBandCodesDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.CompanyBandCodesDao" />
+	</bean>
+
+	<bean id="planSelectionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PlanSelectionDao" />
+	</bean>
+
+	<bean id="contributionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.ContributionDao" />
+	</bean>
+
+	<bean id="companyOptionsDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.CompanyOptionsDao" />
+	</bean>
+
+	<bean id="benefitClassDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.BenefitClassDao" />
+	</bean>
+
+	<bean id="portfolioDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PortfolioDao" />
+	</bean>
+
+	<bean id="realmTypeDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmTypeDao" />
+	</bean>
+
+	<bean id="realmPlanYearRuleDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmPlanYearRuleDao" />
+	</bean>
+
+	<bean id="realmPlanYearConfigurationDao"
+		class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmPlanYearConfigurationDao" />
+	</bean>
+
+	<bean id="realmConfigurationDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmConfigurationDao" />
+	</bean>
+
+	<bean id="employeeDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployeeDataDao" />
+	</bean>
+
+	<bean id="templatePortfolioPlanDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.TemplatePortfolioPlanDao" />
+	</bean>
+
+	<bean id="strategyFundingModelDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingModelDao" />
+	</bean>
+	<bean id="strategyFundingDetailDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingDetailDao" />
+	</bean>
+	
+	<bean id="strategyFundingFlatMaxDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingFlatMaxDao" />
+	</bean>
+	
+	<bean id="templateDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.TemplateDao" />
+	</bean>
+	
+	<bean id="bandCodesRepository" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.BandCodesRepository" />
+	</bean>
+
+	<bean id="nextBenProgram" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.sp.NextBenProgram" />
+	</bean>
+
+	<bean id="nextRateTblID" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.sp.NextRateTblID" />
+	</bean>
+
+	<bean id="spGetNextEligRulesId" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.sp.GetNextEligRulesId" />
+	</bean>
+
+	<bean id="spGetNextBenefitPlan" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.sp.GetNextBenefitPlan" />
+	</bean>
+
+	<bean id="strategyNewService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.StrategyService" />
+	</bean>
+
+	<bean id="planHeadCountService"
+		class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.impl.PlanHeadCountServiceImpl" />
+	</bean>
+	<bean id="prospectPlanHeadCountService"
+		class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.prospect.impl.ProspectPlanHeadCountServiceImpl" />
+	</bean>			
+	<bean id="employerEmployeePlansMappingService"
+		class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.EmployerEmployeePlansMappingService" />			
+	</bean>			
+	<bean id="strategyRenewalService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.StrategyRenewalService" />
+	</bean>
+	<bean id="strategyHistoryService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.StrategyHistoryService" />
+	</bean>
+	<bean id="strategyService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.StrategyService" />
+	</bean>
+	<bean id="companyService" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.CompanyService" />
+	</bean>
+
+	<bean id="planRateDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.model.PlanRateDao" />
+	</bean>
+	
+	<bean id="strategyDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyDataDao" />
+	</bean>
+	
+    <bean id="StrategyFundingDataDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingDataDao" />
+    </bean>
+
+	<bean id="strategyGroupDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyGroupDataDao" />
+	</bean>
+	
+	<bean id="portfolioHeadCountDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PortfolioHeadCountDataDao" />
+	</bean>
+	
+	<bean id="benefitGroupDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.BenefitGroupDao" />
+	</bean>
+
+	<bean id="benefitStrategyGroupDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.BenefitStrategyGroupDao" />
+	</bean>
+
+	<bean id="realmWaitPeriodDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmWaitPeriodDao" />
+	</bean>
+
+	<bean id="realmPlyrPlanDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.XbssRealmPlyrPlanDao" />
+	</bean>
+
+	<bean id="lifeAndDisabilityCalcData" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.LifeAndDisabilityCalcData" />
+	</bean>
+
+	<bean id="realmRegionMinFundingDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmRegionMinFundingDao" />
+	</bean>
+
+	<bean id="benefitPlanDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.BenefitPlanDataDao" />
+	</bean>
+
+	<bean id="realmCloneProgramDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RealmCloneProgramDao" />
+	</bean>
+
+	<bean id="strategyGroupPlanSelectDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyGroupPlanSelectDao" />
+	</bean>
+
+	<bean id="restTemplate" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="org.springframework.web.client.RestTemplate" />
+	</bean>
+
+	<bean id="renewalDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.RenewalDataDao" />
+	</bean>
+
+	<bean id="planHeadCountDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PlanHeadCountDao" />
+	</bean>
+
+	<bean id="employeeDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployeeDao" />
+	</bean>
+
+
+	<bean id="strategyData" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.service.model.StrategyData" />
+	</bean>
+
+    <bean id="benProgInactivateDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.ps.BenProgInactivateDao" />
+    </bean>
+    
+	<bean id="configuration" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="freemarker.template.Configuration" />
+	</bean>
+	
+	<bean id="eligConfigDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.ps.EligConfigDao" />
+	</bean>
+
+	<bean id="groupCovrgHeadCountDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.GroupCovrgHeadCountDao" />
+	</bean>
+
+	<bean id="employeeStrategyGroupDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployeeStrategyGroupDao" />
+	</bean>
+
+	<bean id="strategyGrpHeadCountDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyGroupHeadCountDao" />
+	</bean>
+	
+	<bean id="hqExceptionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.HQExceptionDao" />
+	</bean>
+
+    <bean id="planRatesDataDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.PlanRatesDataDao" />
+    </bean>
+    
+    <bean id="psSubmitDataDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.ps.impl.PsSubmitDataDaoImpl" />
+    </bean>
+    
+  	<bean id="companyDataDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.CompanyDataDao" />
+    </bean> 
+    
+    <bean id="benefitPlanDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.BenefitPlanDao" />
+    </bean> 
+
+    <bean id="minFundExceptionDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.MinFundExceptionDao" />
+    </bean>
+
+     <bean id="benOfferExceptionDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.BenOfferExceptionDao" />
+    </bean>
+    
+    <bean id="planMappingDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.PlanMappingDao" />
+    </bean>
+    
+     <bean id="exceptionAttributeDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.ExceptionAttributeDao" />
+    </bean>
+    
+    <bean id="realPsSubmitDataService" class ="com.trinet.ambis.service.impl.PsSubmitDataServiceImpl"/>
+    
+    <bean id="groupRuleDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.GroupRuleDao" />
+    </bean>
+
+    <bean id="strategyHsaFundingDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.StrategyHsaFundingDao" />
+    </bean>
+    
+	<bean id="benConfirmationStmntDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.BenConfirmationStmntDao" />
+	</bean>
+
+	<bean id="docTypeDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.DocTypeDao" />
+     </bean>
+
+    <bean id="appRulesDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.AppRulesDao" />
+    </bean>
+
+    <bean id="appConfigurationsDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.AppConfigurationsDao" />
+    </bean>
+    
+    <bean id="hrpDataSource" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="javax.sql.DataSource" />
+    </bean>
+
+    <bean id="headCountDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.HeadCountDao" />
+    </bean>
+
+    <bean id="psDataSource" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="javax.sql.DataSource" />
+    </bean>
+    
+    <bean id="schedMidYearFundingDataDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.SchedMidYearFundingDataDao" />
+    </bean>
+    
+	<bean id="supplementalLtdAuthDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.ps.SupplementalAuthDao" />
+    </bean>
+    
+    <bean id="strategyRegionFilterDao" class="org.mockito.Mockito"
+        factory-method="mock">
+        <constructor-arg
+            value="com.trinet.ambis.persistence.dao.hrp.StrategyRegionFilterDao" />
+    </bean>
+    
+    <bean id="featureFlagDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.FeatureFlagDao" />
+	</bean>
+    
+    <bean id="strategyFundingDetailDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingDetailDataDao" />
+	</bean>	
+    
+    <bean id="strategyFundingFlatMaxDataDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.StrategyFundingFlatMaxDataDao" />
+	</bean>
+
+	<bean id="planDeselectionExceptionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.PlanDeselectionExceptionDao" />
+	</bean>
+	
+	<bean id="planCompareDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.plancompare.dao.hrp.PlanCompareDao" />
+	</bean>
+	
+	<bean id="employeeStrategyGroupTransactionDao" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.EmployeeStrategyGroupTransactionDao" />
+	</bean>
+	
+	<bean id="rlRegionPlan1Repository" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.ambis.persistence.dao.hrp.RlRegionPlan1Repository" />
+	</bean>
+
+	<bean id="contributionDataDao" class="org.mockito.Mockito"
+		  factory-method="mock">
+		<constructor-arg
+				value="com.trinet.ambis.persistence.dao.hrp.impl.ContributionDataDaoImpl" />
+	</bean>
+
+	<bean id="emplDefaultPlanAssignmentDataDao" class="org.mockito.Mockito"
+		  factory-method="mock">
+		<constructor-arg
+				value="com.trinet.ambis.persistence.dao.hrp.impl.EmplDefaultPlanAssignmentDataDaoImpl" />
+	</bean>
+
+	<bean id="eePlanAssignmentDataDao" class="org.mockito.Mockito"
+		  factory-method="mock">
+		<constructor-arg
+				value="com.trinet.ambis.persistence.dao.hrp.impl.EePlanAssignmentDataDaoImpl" />
+	</bean>
+	
+	<bean id="benefitsBundleDao" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.persistence.dao.hrp.BenefitsBundleDao" />
+	</bean>
+
+	<bean id="bandCodesService" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.service.BandCodesService" />
+	</bean>
+
+	<bean id="flexRateService" class="org.mockito.Mockito" factory-method="mock">
+		<constructor-arg value="com.trinet.ambis.service.FlexRateService" />
+	</bean>
+
+</beans>

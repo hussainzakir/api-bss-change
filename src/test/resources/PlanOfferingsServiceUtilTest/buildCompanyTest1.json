@@ -1,0 +1,23 @@
+{
+	"reportCode": "POEE",
+	"exchange": "TriNet III",
+	"quarter": "Q4",
+	"planYearStartDate": "10/01/2024",
+	"planYearEndDate": "09/30/2025",
+	"planYear": "10/01/2024",
+	"hqZipCode": "95124",
+	"hqState": "CA",
+	"carriers": [
+		{
+			"id": 1,
+			"name": "Aetna"
+		}
+	],
+	"regions": null,
+	"benefitTypes": [
+		"med"
+	],
+	"state": "OR",
+	"zipCode": "97702",
+	"allRegions": false
+}

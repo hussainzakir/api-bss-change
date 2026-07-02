@@ -1,0 +1,4555 @@
+{
+   "11": [
+      {
+         "planId": "125224",
+         "name": "MetLife Dental 100 LA Vol",
+         "benefitType": "Dental",
+         "carrier": "MetLife",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Dental",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+					 "display":true,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - In Network",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$100",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 65
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - Out of Network",
+                           "displayOrder": 2,
+                           "displayName": "Individual Deductible - Out of Network",
+                           "value": "$100",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 67
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - In Network",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 66
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - Out of Network",
+                           "displayOrder": 4,
+                           "displayName": "Family Deductible - Out of Network",
+                           "value": "$300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 68
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+                     "value": "100%",
+                     "dataType": "PERCENTAGE",
+					 "display":true,
+                     "transformedValue": "100",
+                     "children": null,
+                     "id": 29
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+					 "display":true,
+                     "value": "100%",
+                     "dataType": "STRING",
+                     "transformedValue": "100%",
+                     "children": null,
+                     "id": 32
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic In-Network",
+                     "displayOrder": 7,
+                     "displayName": "In-Network",
+                     "value": "70%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "70",
+                     "children": null,
+                     "id": 30
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic Out-of-Network",
+                     "displayOrder": 8,
+                     "displayName": "Out-of-Network",
+                     "value": "70%",
+                     "dataType": "STRING",
+                     "transformedValue": "70%",
+                     "children": null,
+                     "id": 33
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major In-Network",
+                     "displayOrder": 9,
+                     "displayName": "In-Network",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 31
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 34
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum In-Network",
+                     "displayOrder": 11,
+                     "displayName": "In-Network",
+                     "value": "$1,000",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "1000",
+                     "children": null,
+                     "id": 35
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum Out-of-Network",
+                     "displayOrder": 12,
+                     "displayName": "Out-of-Network",
+                     "value": "$1,000",
+                     "dataType": "STRING",
+                     "transformedValue": "$1,000",
+                     "children": null,
+                     "id": 38
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum",
+                     "displayOrder": 13,
+                     "displayName": "In-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 36
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum Out-of-Network",
+                     "displayOrder": 14,
+                     "displayName": "Out-of-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 49
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Out-of-Network",
+                     "displayOrder": 15,
+                     "displayName": "Out-of-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 43
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia In-Network",
+                     "displayOrder": 16,
+                     "displayName": "In-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 48
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major In-Network",
+                     "displayOrder": 17,
+                     "displayName": "In-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 50
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major Out-Of-Network",
+                     "displayOrder": 18,
+                     "displayName": "Out-of-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 51
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Endo/Perio/Oral Surgery",
+                     "displayOrder": 19,
+                     "displayName": "Endo/Perio/Oral Surgery",
+                     "value": "Basic/Basic/Major",
+                     "dataType": "STRING",
+                     "transformedValue": "Basic/Basic/Major",
+                     "children": null,
+                     "id": 44
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "National Network Specifics",
+                     "displayOrder": 20,
+                     "displayName": "National Network Specifics",
+                     "value": "Nationwide- PDP Plus",
+                     "dataType": "STRING",
+                     "transformedValue": "Nationwide- PDP Plus",
+                     "children": null,
+                     "id": 52
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+					 "display":true,
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 47
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125220",
+         "name": "Aetna Dental 100 Group",
+         "benefitType": "Dental",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Dental",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+					 "display":true,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - In Network",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$100/Individual",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 65
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - Out of Network",
+                           "displayOrder": 2,
+                           "displayName": "Individual Deductible - Out of Network",
+                           "value": "$150/Individual",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "150",
+                           "children": null,
+                           "id": 67
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - In Network",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$300/Family",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 66
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - Out of Network",
+                           "displayOrder": 4,
+                           "displayName": "Family Deductible - Out of Network",
+                           "value": " $450/Family",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "450",
+                           "children": null,
+                           "id": 68
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+                     "value": "100%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "100",
+					 "display":true,
+                     "children": null,
+                     "id": 29
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "100%",
+                     "dataType": "STRING",
+                     "transformedValue": "100%",
+                     "children": null,
+                     "id": 32
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic In-Network",
+                     "displayOrder": 7,
+                     "displayName": "In-Network",
+                     "value": "70%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "70",
+                     "children": null,
+                     "id": 30
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic Out-of-Network",
+                     "displayOrder": 8,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 33
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major In-Network",
+                     "displayOrder": 9,
+                     "displayName": "In-Network",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 31
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 34
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum In-Network",
+                     "displayOrder": 11,
+                     "displayName": "In-Network",
+                     "value": "$1,000",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "1000",
+					 "display":true,
+                     "children": null,
+                     "id": 35
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum Out-of-Network",
+                     "displayOrder": 12,
+                     "displayName": "Out-of-Network",
+                     "value": "$1,000",
+                     "dataType": "STRING",
+                     "transformedValue": "$1,000",
+                     "children": null,
+                     "id": 38
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum",
+                     "displayOrder": 13,
+                     "displayName": "In-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 36
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum Out-of-Network",
+                     "displayOrder": 14,
+                     "displayName": "Out-of-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 49
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Out-of-Network",
+                     "displayOrder": 15,
+                     "displayName": "Out-of-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 43
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia In-Network",
+                     "displayOrder": 16,
+                     "displayName": "In-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 48
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major In-Network",
+                     "displayOrder": 17,
+                     "displayName": "In-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 50
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major Out-Of-Network",
+                     "displayOrder": 18,
+                     "displayName": "Out-of-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 51
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Endo/Perio/Oral Surgery",
+                     "displayOrder": 19,
+                     "displayName": "Endo/Perio/Oral Surgery",
+                     "value": "Basic/Basic/Basic",
+                     "dataType": "STRING",
+                     "transformedValue": "Basic/Basic/Basic",
+                     "children": null,
+                     "id": 44
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "National Network Specifics",
+                     "displayOrder": 20,
+                     "displayName": "National Network Specifics",
+                     "value": "Nationwide",
+                     "dataType": "STRING",
+                     "transformedValue": "Nationwide",
+                     "children": null,
+                     "id": 52
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 47
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125221",
+         "name": "Aetna Dental",
+         "benefitType": "Dental",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Dental",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+					 "display":true,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - In Network",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$100/Individual",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 65
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - Out of Network",
+                           "displayOrder": 2,
+                           "displayName": "Individual Deductible - Out of Network",
+                           "value": "$150/Individual",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "150",
+                           "children": null,
+                           "id": 67
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - In Network",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$300/Family",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 66
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - Out of Network",
+                           "displayOrder": 4,
+                           "displayName": "Family Deductible - Out of Network",
+                           "value": " $450/Family",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "450",
+                           "children": null,
+                           "id": 68
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative In-Network",
+                     "displayOrder": 5,
+					 "display":true,
+                     "displayName": "In-Network",
+                     "value": "100%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "100",
+                     "children": null,
+                     "id": 29
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "100%",
+                     "dataType": "STRING",
+                     "transformedValue": "100%",
+                     "children": null,
+                     "id": 32
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic In-Network",
+                     "displayOrder": 7,
+                     "displayName": "In-Network",
+                     "value": "70%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "70",
+                     "children": null,
+                     "id": 30
+                  },
+                  {
+                     "type": "Attribute",
+					 "display":true,
+                     "name": "Basic Out-of-Network",
+                     "displayOrder": 8,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 33
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major In-Network",
+                     "displayOrder": 9,
+                     "displayName": "In-Network",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 31
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 34
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum In-Network",
+                     "displayOrder": 11,
+                     "displayName": "In-Network",
+                     "value": "$1,000",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "1000",
+                     "children": null,
+                     "id": 35
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum Out-of-Network",
+                     "displayOrder": 12,
+                     "displayName": "Out-of-Network",
+                     "value": "$1,000",
+                     "dataType": "STRING",
+                     "transformedValue": "$1,000",
+                     "children": null,
+                     "id": 38
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum",
+                     "displayOrder": 13,
+                     "displayName": "In-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 36
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum Out-of-Network",
+                     "displayOrder": 14,
+                     "displayName": "Out-of-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 49
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Out-of-Network",
+                     "displayOrder": 15,
+                     "displayName": "Out-of-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 43
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia In-Network",
+                     "displayOrder": 16,
+                     "displayName": "In-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 48
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major In-Network",
+                     "displayOrder": 17,
+                     "displayName": "In-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 50
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major Out-Of-Network",
+                     "displayOrder": 18,
+                     "displayName": "Out-of-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 51
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Endo/Perio/Oral Surgery",
+                     "displayOrder": 19,
+                     "displayName": "Endo/Perio/Oral Surgery",
+                     "value": "Basic/Basic/Basic",
+                     "dataType": "STRING",
+                     "transformedValue": "Basic/Basic/Basic",
+                     "children": null,
+                     "id": 44
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "National Network Specifics",
+                     "displayOrder": 20,
+                     "displayName": "National Network Specifics",
+                     "value": "Nationwide",
+                     "dataType": "STRING",
+                     "transformedValue": "Nationwide",
+                     "children": null,
+                     "id": 52
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 47
+                  }
+               ]
+            }
+         ]
+      }
+      
+   ],
+   "1D": [
+      {
+         "planId": "125224",
+         "name": "MetLife Dental 100 LA Vol",
+         "benefitType": "Dental",
+         "carrier": "MetLife",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Dental",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+					 "display":true,
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - In Network",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$100",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 65
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - Out of Network",
+                           "displayOrder": 2,
+                           "displayName": "Individual Deductible - Out of Network",
+                           "value": "$100",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 67
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - In Network",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 66
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - Out of Network",
+                           "displayOrder": 4,
+                           "displayName": "Family Deductible - Out of Network",
+                           "value": "$300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 68
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+					 "display":true,
+                     "value": "100%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "100",
+                     "children": null,
+                     "id": 29
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "100%",
+                     "dataType": "STRING",
+                     "transformedValue": "100%",
+                     "children": null,
+                     "id": 32
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic In-Network",
+                     "displayOrder": 7,
+                     "displayName": "In-Network",
+                     "value": "70%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "70",
+                     "children": null,
+                     "id": 30
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic Out-of-Network",
+                     "displayOrder": 8,
+                     "displayName": "Out-of-Network",
+                     "value": "70%",
+                     "dataType": "STRING",
+                     "transformedValue": "70%",
+                     "children": null,
+                     "id": 33
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major In-Network",
+                     "displayOrder": 9,
+                     "displayName": "In-Network",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 31
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 34
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum In-Network",
+                     "displayOrder": 11,
+                     "displayName": "In-Network",
+                     "value": "$1,000",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "1000",
+                     "children": null,
+                     "id": 35
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum Out-of-Network",
+                     "displayOrder": 12,
+                     "displayName": "Out-of-Network",
+                     "value": "$1,000",
+                     "dataType": "STRING",
+                     "transformedValue": "$1,000",
+                     "children": null,
+                     "id": 38
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum",
+                     "displayOrder": 13,
+                     "displayName": "In-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 36
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum Out-of-Network",
+                     "displayOrder": 14,
+                     "displayName": "Out-of-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 49
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Out-of-Network",
+                     "displayOrder": 15,
+                     "displayName": "Out-of-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 43
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia In-Network",
+                     "displayOrder": 16,
+                     "displayName": "In-Network",
+                     "value": "Not Covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not Covered",
+                     "children": null,
+                     "id": 48
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major In-Network",
+                     "displayOrder": 17,
+                     "displayName": "In-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 50
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major Out-Of-Network",
+                     "displayOrder": 18,
+                     "displayName": "Out-of-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 51
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Endo/Perio/Oral Surgery",
+                     "displayOrder": 19,
+                     "displayName": "Endo/Perio/Oral Surgery",
+                     "value": "Basic/Basic/Major",
+                     "dataType": "STRING",
+                     "transformedValue": "Basic/Basic/Major",
+                     "children": null,
+                     "id": 44
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "National Network Specifics",
+                     "displayOrder": 20,
+                     "displayName": "National Network Specifics",
+                     "value": "Nationwide- PDP Plus",
+                     "dataType": "STRING",
+                     "transformedValue": "Nationwide- PDP Plus",
+                     "children": null,
+                     "id": 52
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 47
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125220",
+         "name": "Aetna Dental 100 Group",
+         "benefitType": "Dental",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Dental",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+					 "display":true,
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - In Network",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$100/Individual",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "100",
+                           "children": null,
+                           "id": 65
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Individual Deductible - Out of Network",
+                           "displayOrder": 2,
+                           "displayName": "Individual Deductible - Out of Network",
+                           "value": "$150/Individual",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "150",
+                           "children": null,
+                           "id": 67
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - In Network",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$300/Family",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "300",
+                           "children": null,
+                           "id": 66
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible - Out of Network",
+                           "displayOrder": 4,
+                           "displayName": "Family Deductible - Out of Network",
+                           "value": " $450/Family",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "450",
+                           "children": null,
+                           "id": 68
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+					 "display":true,
+                     "value": "100%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "100",
+                     "children": null,
+                     "id": 29
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Preventative Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "100%",
+                     "dataType": "STRING",
+                     "transformedValue": "100%",
+                     "children": null,
+                     "id": 32
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic In-Network",
+                     "displayOrder": 7,
+                     "displayName": "In-Network",
+                     "value": "70%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "70",
+                     "children": null,
+                     "id": 30
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Basic Out-of-Network",
+                     "displayOrder": 8,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 33
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major In-Network",
+                     "displayOrder": 9,
+                     "displayName": "In-Network",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 31
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Major Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": "Out-of-Network",
+                     "value": "50%",
+                     "dataType": "STRING",
+                     "transformedValue": "50%",
+                     "children": null,
+                     "id": 34
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum In-Network",
+                     "displayOrder": 11,
+                     "displayName": "In-Network",
+                     "value": "$1,000",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "1000",
+                     "children": null,
+                     "id": 35
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Annual Maximum Out-of-Network",
+                     "displayOrder": 12,
+                     "displayName": "Out-of-Network",
+                     "value": "$1,000",
+                     "dataType": "STRING",
+                     "transformedValue": "$1,000",
+                     "children": null,
+                     "id": 38
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum",
+                     "displayOrder": 13,
+                     "displayName": "In-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 36
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Lifetime Maximum Out-of-Network",
+                     "displayOrder": 14,
+                     "displayName": "Out-of-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 49
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia Out-of-Network",
+                     "displayOrder": 15,
+                     "displayName": "Out-of-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 43
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Orthodontia In-Network",
+                     "displayOrder": 16,
+                     "displayName": "In-Network",
+                     "value": "Not covered",
+                     "dataType": "STRING",
+                     "transformedValue": "Not covered",
+                     "children": null,
+                     "id": 48
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major In-Network",
+                     "displayOrder": 17,
+                     "displayName": "In-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 50
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Waiting Period - Major Out-Of-Network",
+                     "displayOrder": 18,
+                     "displayName": "Out-of-Network",
+                     "value": "None",
+                     "dataType": "STRING",
+                     "transformedValue": "None",
+                     "children": null,
+                     "id": 51
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Endo/Perio/Oral Surgery",
+                     "displayOrder": 19,
+                     "displayName": "Endo/Perio/Oral Surgery",
+                     "value": "Basic/Basic/Basic",
+                     "dataType": "STRING",
+                     "transformedValue": "Basic/Basic/Basic",
+                     "children": null,
+                     "id": 44
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "National Network Specifics",
+                     "displayOrder": 20,
+                     "displayName": "National Network Specifics",
+                     "value": "Nationwide",
+                     "dataType": "STRING",
+                     "transformedValue": "Nationwide",
+                     "children": null,
+                     "id": 52
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 47
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "14": [
+      {
+         "planId": "124842",
+         "name": "VSP Vision",
+         "benefitType": "Vision",
+         "carrier": "Vision Service Plan (VSP)",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Vision",
+			   "display":true,
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay In-Network",
+                     "displayOrder": 1,
+                     "displayName": "In-Network",
+                     "value": "$10",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "10",
+                     "children": null,
+                     "id": 53
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay Out-of-Network",
+                     "displayOrder": 2,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45",
+                     "children": null,
+                     "id": 59
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay In-Network",
+                     "displayOrder": 3,
+                     "displayName": "In-Network",
+                     "value": "$25",
+                     "dataType": "STRING",
+                     "transformedValue": "$25",
+                     "children": null,
+                     "id": 57
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay Out-of-Network",
+                     "displayOrder": 4,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "children": null,
+                     "id": 60
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+                     "value": "$130",
+                     "dataType": "STRING",
+                     "transformedValue": "$130",
+                     "children": null,
+                     "id": 58
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $47",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $47",
+                     "children": null,
+                     "id": 61
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Frequency",
+                     "displayOrder": 7,
+                     "displayName": "Exam Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+					 "display":true,
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 54
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lenses or Contact Lens Frequency",
+                     "displayOrder": 8,
+                     "displayName": "Lenses or Contact Lens Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 55
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "122179",
+         "name": "Aetna EyeMed Vol",
+         "benefitType": "Vision",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Vision",
+			   "display":true,
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay In-Network",
+                     "displayOrder": 1,
+                     "displayName": "In-Network",
+                     "value": "$10",
+                     "dataType": "CURRENCY",
+					 "display":true,
+                     "transformedValue": "10",
+                     "children": null,
+                     "id": 53
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay Out-of-Network",
+                     "displayOrder": 2,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45",
+                     "children": null,
+                     "id": 59
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay In-Network",
+                     "displayOrder": 3,
+                     "displayName": "In-Network",
+                     "value": "$25",
+                     "dataType": "STRING",
+                     "transformedValue": "$25",
+                     "children": null,
+                     "id": 57
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay Out-of-Network",
+                     "displayOrder": 4,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "children": null,
+                     "id": 60
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+                     "value": "$130",
+                     "dataType": "STRING",
+                     "transformedValue": "$130",
+                     "children": null,
+                     "id": 58
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $47",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $47",
+                     "children": null,
+                     "id": 61
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Frequency",
+                     "displayOrder": 7,
+                     "displayName": "Exam Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 54
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lenses or Contact Lens Frequency",
+                     "displayOrder": 8,
+                     "displayName": "Lenses or Contact Lens Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 55
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+    "1V": [
+      {
+         "planId": "124842",
+         "name": "VSP Vision",
+         "benefitType": "Vision",
+         "carrier": "Vision Service Plan (VSP)",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Vision",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay In-Network",
+                     "displayOrder": 1,
+                     "displayName": "In-Network",
+                     "value": "$10",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "10",
+                     "children": null,
+                     "id": 53
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay Out-of-Network",
+                     "displayOrder": 2,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45",
+                     "children": null,
+                     "id": 59
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay In-Network",
+                     "displayOrder": 3,
+                     "displayName": "In-Network",
+                     "value": "$25",
+                     "dataType": "STRING",
+                     "transformedValue": "$25",
+                     "children": null,
+                     "id": 57
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay Out-of-Network",
+                     "displayOrder": 4,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "children": null,
+                     "id": 60
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+                     "value": "$130",
+                     "dataType": "STRING",
+                     "transformedValue": "$130",
+                     "children": null,
+                     "id": 58
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $47",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $47",
+                     "children": null,
+                     "id": 61
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Frequency",
+                     "displayOrder": 7,
+                     "displayName": "Exam Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 54
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lenses or Contact Lens Frequency",
+                     "displayOrder": 8,
+                     "displayName": "Lenses or Contact Lens Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 55
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "122179",
+         "name": "Aetna EyeMed Vol",
+         "benefitType": "Vision",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Vision",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay In-Network",
+                     "displayOrder": 1,
+                     "displayName": "In-Network",
+                     "value": "$10",
+                     "dataType": "CURRENCY",
+                     "transformedValue": "10",
+                     "children": null,
+                     "id": 53
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Copay Out-of-Network",
+                     "displayOrder": 2,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45",
+                     "children": null,
+                     "id": 59
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay In-Network",
+                     "displayOrder": 3,
+                     "displayName": "In-Network",
+                     "value": "$25",
+                     "dataType": "STRING",
+                     "transformedValue": "$25",
+                     "children": null,
+                     "id": 57
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Materials Copay Out-of-Network",
+                     "displayOrder": 4,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+                     "children": null,
+                     "id": 60
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance In-Network",
+                     "displayOrder": 5,
+                     "displayName": "In-Network",
+                     "value": "$130",
+                     "dataType": "STRING",
+                     "transformedValue": "$130",
+                     "children": null,
+                     "id": 58
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Frames Allowance Out-of-Network",
+                     "displayOrder": 6,
+                     "displayName": "Out-of-Network",
+                     "value": "Reimbursed up to $47",
+                     "dataType": "STRING",
+                     "transformedValue": "Reimbursed up to $47",
+                     "children": null,
+                     "id": 61
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Examination Frequency",
+                     "displayOrder": 7,
+                     "displayName": "Exam Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 54
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lenses or Contact Lens Frequency",
+                     "displayOrder": 8,
+                     "displayName": "Lenses or Contact Lens Frequency",
+                     "value": "Every 12 months",
+                     "dataType": "STRING",
+                     "transformedValue": "Every 12 months",
+                     "children": null,
+                     "id": 55
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "10": [
+      {
+         "planId": "125246",
+         "name": "FL Blue PPO 2000 NTL",
+         "benefitType": "Medical",
+         "carrier": "Florida Blue",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+			   "display":true,
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+					 "display":true,
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+                     "value": "30%",
+					 "display":true,
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125266",
+         "name": "UHC Primary 1000 Dallas",
+         "benefitType": "Medical",
+         "carrier": "UnitedHealthcare",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$1,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "1000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$7,150",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "7150",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$10,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$10,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$14,300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "14300",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$20,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$20,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+                     "value": "20%",
+					 "display":true,
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "20",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$0",
+                     "dataType": "STRING",
+                     "transformedValue": "$0",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$75",
+                     "dataType": "STRING",
+                     "transformedValue": "$75",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$0",
+                     "dataType": "STRING",
+                     "transformedValue": "$0",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$75",
+                     "dataType": "STRING",
+                     "transformedValue": "$75",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$350",
+                     "dataType": "STRING",
+                     "transformedValue": "$350",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$15",
+                     "dataType": "STRING",
+                     "transformedValue": "$15",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$45",
+                     "dataType": "STRING",
+                     "transformedValue": "$45",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$65",
+                     "dataType": "STRING",
+                     "transformedValue": "$65",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "Choice Plus",
+                     "dataType": "STRING",
+                     "transformedValue": "Choice Plus",
+                     "children": null,
+                     "id": 21
+                  },
+                   {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "UHC",
+                     "dataType": "STRING",
+                     "transformedValue": "UHC",
+                     "children": null,
+                     "id": 5
+                  },
+                   {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+       {
+         "planId": "125266",
+         "name": "UHC PPO 1000 Dallas",
+         "benefitType": "Medical",
+         "carrier": "UnitedHealthcare",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$1,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "1000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$7,150",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "7150",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$10,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$10,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$14,300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "14300",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$20,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$20,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+                     "value": "20%",
+					 "display":true,
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "20",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$0",
+                     "dataType": "STRING",
+                     "transformedValue": "$0",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$75",
+                     "dataType": "STRING",
+                     "transformedValue": "$75",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$0",
+                     "dataType": "STRING",
+                     "transformedValue": "$0",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$75",
+                     "dataType": "STRING",
+                     "transformedValue": "$75",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$350",
+                     "dataType": "STRING",
+                     "transformedValue": "$350",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$15",
+                     "dataType": "STRING",
+                     "transformedValue": "$15",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$45",
+                     "dataType": "STRING",
+                     "transformedValue": "$45",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$65",
+                     "dataType": "STRING",
+                     "transformedValue": "$65",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "Choice Plus",
+                     "dataType": "STRING",
+                     "transformedValue": "Choice Plus",
+                     "children": null,
+                     "id": 21
+                  },
+                   {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                   {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "No",
+                     "dataType": "STRING",
+                     "transformedValue": "No",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+       {
+         "planId": "125266",
+         "name": "UHC PPO 1000 Dallas",
+         "benefitType": "Medical",
+         "carrier": "UnitedHealthcare",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$1,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "1000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$7,150",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "7150",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$10,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$10,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$14,300",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "14300",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$20,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$20,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+                     "value": "20%",
+					 "display":true,
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "20",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$0",
+                     "dataType": "STRING",
+                     "transformedValue": "$0",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$75",
+                     "dataType": "STRING",
+                     "transformedValue": "$75",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$0",
+                     "dataType": "STRING",
+                     "transformedValue": "$0",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$75",
+                     "dataType": "STRING",
+                     "transformedValue": "$75",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$350",
+                     "dataType": "STRING",
+                     "transformedValue": "$350",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$15",
+                     "dataType": "STRING",
+                     "transformedValue": "$15",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$45",
+                     "dataType": "STRING",
+                     "transformedValue": "$45",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$65",
+                     "dataType": "STRING",
+                     "transformedValue": "$65",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "Choice Plus",
+                     "dataType": "STRING",
+                     "transformedValue": "Choice Plus",
+                     "children": null,
+                     "id": 21
+                  },
+                   {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                   {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125246",
+         "name": "AETNA PPO 7150 Central FL",
+         "benefitType": "Medical",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+					 "display":true,
+                     "displayName": " ",
+                     "value": "30%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125266",
+         "name": "Aetna EPO 1000 Southeast/N FL",
+         "benefitType": "Medical",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+                     "value": "30%",
+					 "display":true,
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125270",
+         "name": "Aetna EPO 4000 Tri-State",
+         "benefitType": "Medical",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+					 "display":true,
+                     "displayName": " ",
+                     "value": "30%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125273",
+         "name": "BS-CA HDHP 5500 S NTL",
+         "benefitType": "Medical",
+         "carrier": "Blue Shield of California",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+					 "display":true,
+                     "value": "30%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125274",
+         "name": "AETNA Indemnity 1000 NTL",
+         "benefitType": "Medical",
+         "carrier": "Aetna",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+					 "display":true,
+                     "value": "30%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "planId": "125275",
+         "name": "BS-CA PPO 300 S NTL MA",
+         "benefitType": "Medical",
+         "carrier": "Blue Shield of California",
+         "template": [
+            {
+               "type": "Category",
+               "name": "Ouput Medical",
+               "displayOrder": 1,
+               "children": [
+                  {
+                     "type": "Category",
+                     "name": "Deductible",
+                     "displayOrder": 1,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible",
+                           "displayOrder": 1,
+                           "displayName": "Single",
+                           "value": "$2,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "2000",
+                           "children": null,
+                           "id": 6
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Deductible Out-of-Network",
+                           "displayOrder": 2,
+                           "displayName": "Single",
+                           "value": "$4,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$4,000",
+                           "children": null,
+                           "id": 25
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible",
+                           "displayOrder": 3,
+                           "displayName": "Family",
+                           "value": "$4,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "4000",
+                           "children": null,
+                           "id": 7
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Deductible Out-of-Network",
+                           "displayOrder": 4,
+                           "displayName": "Family",
+                           "value": "$8,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$8,000",
+                           "children": null,
+                           "id": 20
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Category",
+                     "name": "Out of Pocket Max",
+                     "displayOrder": 5,
+                     "displayName": null,
+                     "value": null,
+                     "dataType": null,
+                     "transformedValue": null,
+                     "children": [
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max",
+                           "displayOrder": 5,
+                           "displayName": "Single",
+                           "value": "$5,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "5000",
+                           "children": null,
+                           "id": 9
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Single Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 6,
+                           "displayName": "Single",
+                           "value": "$16,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$16,000",
+                           "children": null,
+                           "id": 26
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max",
+                           "displayOrder": 7,
+                           "displayName": "Family",
+                           "value": "$10,000",
+                           "dataType": "CURRENCY",
+                           "transformedValue": "10000",
+                           "children": null,
+                           "id": 22
+                        },
+                        {
+                           "type": "Attribute",
+                           "name": "Family Out-of-Pocket Max Out-of-Network",
+                           "displayOrder": 8,
+                           "displayName": "Family",
+                           "value": "$32,000",
+                           "dataType": "STRING",
+                           "transformedValue": "$32,000",
+                           "children": null,
+                           "id": 27
+                        }
+                     ],
+                     "id": 0
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance",
+                     "displayOrder": 9,
+                     "displayName": " ",
+                     "value": "30%",
+					 "display":true,
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "30",
+                     "children": null,
+                     "id": 10
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Co-Insurance Out-of-Network",
+                     "displayOrder": 10,
+                     "displayName": " ",
+                     "value": "50%",
+                     "dataType": "PERCENTAGE",
+                     "transformedValue": "50",
+                     "children": null,
+                     "id": 1
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Doctor Visits",
+                     "displayOrder": 11,
+                     "displayName": "Primary Care Visit",
+                     "value": "$35",
+                     "dataType": "STRING",
+                     "transformedValue": "$35",
+                     "children": null,
+                     "id": 11
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Specialist Visits",
+                     "displayOrder": 12,
+                     "displayName": "Specialist Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 12
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Lab & X-Ray",
+                     "displayOrder": 13,
+                     "displayName": "Lab & X-Ray",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 24
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Urgent Care Visits",
+                     "displayOrder": 14,
+                     "displayName": "Urgent Care Visit",
+                     "value": "$50",
+                     "dataType": "STRING",
+                     "transformedValue": "$50",
+                     "children": null,
+                     "id": 18
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Emergency Room Visits",
+                     "displayOrder": 15,
+                     "displayName": "Emergency Room Visit",
+                     "value": "$250",
+                     "dataType": "STRING",
+                     "transformedValue": "$250",
+                     "children": null,
+                     "id": 14
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Deductible (Non-Generic)",
+                     "displayOrder": 16,
+                     "displayName": "Rx Deductible (Non-Generic)",
+                     "value": "N/A",
+                     "dataType": "STRING",
+                     "transformedValue": "N/A",
+                     "children": null,
+                     "id": 8
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 1",
+                     "displayOrder": 17,
+                     "displayName": "Generic Rx (Tier 1)",
+                     "value": "$10",
+                     "dataType": "STRING",
+                     "transformedValue": "$10",
+                     "children": null,
+                     "id": 15
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 2",
+                     "displayOrder": 18,
+                     "displayName": "Brand Rx (Tier 2)",
+                     "value": "$40",
+                     "dataType": "STRING",
+                     "transformedValue": "$40",
+                     "children": null,
+                     "id": 16
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Rx Tier 3",
+                     "displayOrder": 19,
+                     "displayName": "Non-Formulary Rx (Tier 3)",
+                     "value": "$60",
+                     "dataType": "STRING",
+                     "transformedValue": "$60",
+                     "children": null,
+                     "id": 17
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Network Name",
+                     "displayOrder": 20,
+                     "displayName": "Network Name",
+                     "value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "dataType": "STRING",
+                     "transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+                     "children": null,
+                     "id": 21
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "Plan Type",
+                     "displayOrder": 21,
+                     "displayName": "Plan Type",
+                     "value": "PPO",
+                     "dataType": "STRING",
+                     "transformedValue": "PPO",
+                     "children": null,
+                     "id": 5
+                  },
+                  {
+                     "type": "Attribute",
+                     "name": "HSA",
+                     "displayOrder": 22,
+                     "displayName": "HSA",
+                     "value": "Yes",
+                     "dataType": "STRING",
+                     "transformedValue": "Yes",
+                     "children": null,
+                     "id": 4
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

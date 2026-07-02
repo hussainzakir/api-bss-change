@@ -1,0 +1,270 @@
+{
+	"planId": "005ARK",
+	"name": "Anthem PPO 1000 NY NTL",
+	"benefitType": "Medical",
+	"carrier": "Anthem",
+	"template": [
+		{
+			"type": "Category",
+			"name": "medical_ouput",
+			"displayOrder": 1,
+			"children": [
+				{
+					"type": "Category",
+					"name": "Deductible",
+					"displayOrder": 1,
+					"displayName": null,
+					"value": null,
+					"dataType": null,
+					"transformedValue": null,
+					"children": [
+						{
+							"type": "Attribute",
+							"name": "Single Deductible",
+							"displayOrder": 1,
+							"displayName": "Single",
+							"value": "$1,000",
+							"dataType": "CURRENCY",
+							"transformedValue": "1000",
+							"children": null,
+							"id": 6
+						},
+						{
+							"type": "Attribute",
+							"name": "Single Deductible Out-of-Network",
+							"displayOrder": 2,
+							"displayName": "Single",
+							"value": "$2,000",
+							"dataType": "STRING",
+							"transformedValue": "$2,000",
+							"children": null,
+							"id": 25
+						},
+						{
+							"type": "Attribute",
+							"name": "Family Deductible",
+							"displayOrder": 3,
+							"displayName": "Family",
+							"value": "$2,000",
+							"dataType": "CURRENCY",
+							"transformedValue": "2000",
+							"children": null,
+							"id": 7
+						},
+						{
+							"type": "Attribute",
+							"name": "Family Deductible Out-of-Network",
+							"displayOrder": 4,
+							"displayName": "Family",
+							"value": "$4,000",
+							"dataType": "STRING",
+							"transformedValue": "$4,000",
+							"children": null,
+							"id": 20
+						}
+					],
+					"id": 0
+				},
+				{
+					"type": "Category",
+					"name": "Out-of-Pocket Max",
+					"displayOrder": 5,
+					"displayName": null,
+					"value": null,
+					"dataType": null,
+					"transformedValue": null,
+					"children": [
+						{
+							"type": "Attribute",
+							"name": "Single Out-of-Pocket Max",
+							"displayOrder": 5,
+							"displayName": "Single",
+							"value": "$6,000",
+							"dataType": "CURRENCY",
+							"transformedValue": "6000",
+							"children": null,
+							"id": 9
+						},
+						{
+							"type": "Attribute",
+							"name": "Single Out-of-Pocket Max Out-of-Network",
+							"displayOrder": 6,
+							"displayName": "Single",
+							"value": "$12,000",
+							"dataType": "STRING",
+							"transformedValue": "$12,000",
+							"children": null,
+							"id": 26
+						},
+						{
+							"type": "Attribute",
+							"name": "Family Out-of-Pocket Max",
+							"displayOrder": 7,
+							"displayName": "Family",
+							"value": "$12,000",
+							"dataType": "CURRENCY",
+							"transformedValue": "12000",
+							"children": null,
+							"id": 22
+						},
+						{
+							"type": "Attribute",
+							"name": "Family Out-of-Pocket Max Out-of-Network",
+							"displayOrder": 8,
+							"displayName": "Family",
+							"value": "$24,000",
+							"dataType": "STRING",
+							"transformedValue": "$24,000",
+							"children": null,
+							"id": 27
+						}
+					],
+					"id": 0
+				},
+				{
+					"type": "Attribute",
+					"name": "Co-Insurance",
+					"displayOrder": 9,
+					"displayName": " ",
+					"value": "20%",
+					"dataType": "PERCENTAGE",
+					"transformedValue": "20",
+					"children": null,
+					"id": 10
+				},
+				{
+					"type": "Attribute",
+					"name": "Co-Insurance Out-of-Network",
+					"displayOrder": 10,
+					"displayName": " ",
+					"value": "30%",
+					"dataType": "PERCENTAGE",
+					"transformedValue": "30",
+					"children": null,
+					"id": 1
+				},
+				{
+					"type": "Attribute",
+					"name": "Doctor Visits",
+					"displayOrder": 11,
+					"displayName": "Primary Care Visit",
+					"value": "$20",
+					"dataType": "STRING",
+					"transformedValue": "$20",
+					"children": null,
+					"id": 11
+				},
+				{
+					"type": "Attribute",
+					"name": "Specialist Visits",
+					"displayOrder": 12,
+					"displayName": "Specialist Visit",
+					"value": "$40",
+					"dataType": "STRING",
+					"transformedValue": "$40",
+					"children": null,
+					"id": 12
+				},
+				{
+					"type": "Attribute",
+					"name": "Lab & X-Ray",
+					"displayOrder": 13,
+					"displayName": "Lab & X-Ray",
+					"value": "$40",
+					"dataType": "STRING",
+					"transformedValue": "$40",
+					"children": null,
+					"id": 24
+				},
+				{
+					"type": "Attribute",
+					"name": "Urgent Care Visits",
+					"displayOrder": 14,
+					"displayName": "Urgent Care Visit",
+					"value": "$75",
+					"dataType": "STRING",
+					"transformedValue": "$75",
+					"children": null,
+					"id": 18
+				},
+				{
+					"type": "Attribute",
+					"name": "Emergency Room Visits",
+					"displayOrder": 15,
+					"displayName": "Emergency Room Visit",
+					"value": "$200",
+					"dataType": "STRING",
+					"transformedValue": "$200",
+					"children": null,
+					"id": 14
+				},
+				{
+					"type": "Attribute",
+					"name": "Rx Deductible (Non-Generic)",
+					"displayOrder": 16,
+					"displayName": "Rx Deductible (Non-Generic)",
+					"value": "N/A",
+					"dataType": "STRING",
+					"transformedValue": "N/A",
+					"children": null,
+					"id": 8
+				},
+				{
+					"type": "Attribute",
+					"name": "Rx Tier 1",
+					"displayOrder": 17,
+					"displayName": "Generic Rx (Tier 1)",
+					"value": "$10",
+					"dataType": "STRING",
+					"transformedValue": "$10",
+					"children": null,
+					"id": 15
+				},
+				{
+					"type": "Attribute",
+					"name": "Rx Tier 2",
+					"displayOrder": 18,
+					"displayName": "Brand Rx (Tier 2)",
+					"value": "$35",
+					"dataType": "STRING",
+					"transformedValue": "$35",
+					"children": null,
+					"id": 16
+				},
+				{
+					"type": "Attribute",
+					"name": "Rx Tier 3",
+					"displayOrder": 19,
+					"displayName": "Non-Formulary Rx (Tier 3)",
+					"value": "$70",
+					"dataType": "STRING",
+					"transformedValue": "$70",
+					"children": null,
+					"id": 17
+				},
+				{
+					"type": "Attribute",
+					"name": "Plan Type",
+					"displayOrder": 20,
+					"displayName": "Plan Type",
+					"value": "PPO",
+					"dataType": "STRING",
+					"transformedValue": "PPO",
+					"children": null,
+					"id": 5
+				},
+				{
+					"type": "Attribute",
+					"name": "HSA",
+					"displayOrder": 21,
+					"displayName": "HSA",
+					"value": "No",
+					"dataType": "STRING",
+					"transformedValue": "No",
+					"children": null,
+					"id": 4
+				}
+			]
+		}
+	]
+}

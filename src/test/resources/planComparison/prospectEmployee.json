@@ -1,0 +1,102 @@
+[
+   {
+      "employeeId": "5CQ-E2",
+      "benefitPlans": [
+         {
+            "coverageCode": "EF",
+            "benefitType": "14",
+            "benefitPlan": "124842"
+         },
+         {
+            "coverageCode": "EC",
+            "benefitType": "11",
+            "benefitPlan": "125220"
+         },
+         {
+            "coverageCode": "EE",
+            "benefitType": "10",
+            "benefitPlan": "125246"
+         }
+      ]
+   },
+   {
+      "employeeId": "5CQ-E3",
+      "benefitPlans": [
+         {
+            "coverageCode": "EF",
+            "benefitType": "14",
+            "benefitPlan": "124842"
+         },
+         {
+            "coverageCode": "EC",
+            "benefitType": "11",
+            "benefitPlan": "125220"
+         },
+         {
+            "coverageCode": "EE",
+            "benefitType": "10",
+            "benefitPlan": "125266"
+         }
+      ]
+   },
+   {
+      "employeeId": "5CQ-E4",
+      "benefitPlans": [
+         {
+            "coverageCode": "EF",
+            "benefitType": "14",
+            "benefitPlan": "122179"
+         },
+         {
+            "coverageCode": "EC",
+            "benefitType": "11",
+            "benefitPlan": "125224"
+         },
+         {
+            "coverageCode": "EE",
+            "benefitType": "10",
+            "benefitPlan": "125246"
+         }
+      ]
+   },
+   {
+      "employeeId": "5CQ-E5",
+      "benefitPlans": [
+         {
+            "coverageCode": "EF",
+            "benefitType": "14",
+            "benefitPlan": "122179"
+         },
+         {
+            "coverageCode": "EC",
+            "benefitType": "11",
+            "benefitPlan": "125224"
+         },
+         {
+            "coverageCode": "EE",
+            "benefitType": "10",
+            "benefitPlan": "125246"
+         }
+      ]
+   },
+   {
+      "employeeId": "5CQ-E6",
+      "benefitPlans": [
+         {
+            "coverageCode": "EF",
+            "benefitType": "14",
+            "benefitPlan": "122179"
+         },
+         {
+            "coverageCode": "EC",
+            "benefitType": "11",
+            "benefitPlan": "125224"
+         },
+         {
+            "coverageCode": "EE",
+            "benefitType": "10",
+            "benefitPlan": "125246"
+         }
+      ]
+   }
+]

@@ -1,0 +1,103 @@
+{
+	"assets": [
+		{
+			"uid": "bltf4c206d48aa1a968",
+			"carrierNames": [
+				"Aetna",
+				"Aetna EyeMed",
+				"Aetna/EyeMed"
+			]
+		},
+		{
+			"uid": "blt626c6d3cad724700",
+			"carrierNames": [
+				"Guardian"
+			]
+		},
+		{
+			"uid": "blt9b8d723c15d03040",
+			"carrierNames": [
+				"Anthem"
+			]
+		},
+		{
+			"uid": "blt5cae541ec10ba7da",
+			"carrierNames": [
+				"Harvard Pilgrim Health Care"
+			]
+		},
+		{
+			"uid": "blta3987fd2cb78a4ca",
+			"carrierNames": [
+				"BCBS MN"
+			]
+		},
+		{
+			"uid": "blt7976411f3b1b8187",
+			"carrierNames": [
+				"Blue Cross Blue Shield of North Carolina"
+			]
+		},
+		{
+			"uid": "blt8e0969bc5a56c798",
+			"carrierNames": [
+				"Blue Shield of California"
+			]
+		},
+		{
+			"uid": "blt998e598df9bd28f9",
+			"carrierNames": [
+				"Delta Dental"
+			]
+		},
+		{
+			"uid": "blt953c242f47362fde",
+			"carrierNames": [
+				"Empire"
+			]
+		},
+		{
+			"uid": "blt6bd47df98fc19c8b",
+			"carrierNames": [
+				"Florida Blue"
+			]
+		},
+		{
+			"uid": "blt252d3d15c5114f3c",
+			"carrierNames": [
+				"Kaiser Permanente",
+				"Kaiser Permanente CO/GA",
+				"Kaiser Permanente Hawaii",
+				"Kaiser Permanente NW/WA",
+				"Kaiser Permanente VA/MD"
+			]
+		},
+		{
+			"uid": "blt0316e33da4f68737",
+			"carrierNames": [
+				"MetLife"
+			]
+		},
+		{
+			"uid": "blt86b6b9fe9aaa70b7",
+			"carrierNames": [
+				"UnitedHealthcare"
+			]
+		},
+		{
+			"uid": "blt9fe6458f15602cbe",
+			"carrierNames": [
+				"VSP",
+				"Vision Service Plan (VSP)"
+			]
+		},
+		{
+			"uid": "blt43a1e610d0d90557",
+			"carrierNames": [
+				"Tufts",
+				"Tufts",
+				"Tufts Health Plan"
+			]
+		}
+	]
+}

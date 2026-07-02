@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="Console" target="System.out">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS}: %-5p: %c (%F:%L) - %m%n" />
+		</Console>
+
+		<RollingFile name="RollingFile"
+			fileName="${env:CATALINA_HOME}/logs/api-bss/api-bss.log"
+			filePattern="${env:CATALINA_HOME}/logs/api-bss/api-bss-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="%X{sessionId}_%X{requestId} %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="250 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="com.trinet" level="error" additivity="true" />
+		<logger
+			name="springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator"
+			level="OFF" additivity="false"></logger>
+
+		<logger name="org.hibernate.SQL" level="error" />
+		<logger name="org.hibernate.type" level="error" />
+		<logger name="org.springframework" level="error" />
+		<logger name="com.mangofactory" level="error" />
+		<logger name="org.jboss" level="error" />
+
+		<Root level="error">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
+
+</Configuration>

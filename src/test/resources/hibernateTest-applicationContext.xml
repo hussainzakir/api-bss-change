@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/data/jpa
+		http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- <jdbc:embedded-database id="dataSource" type="HSQL">
+    </jdbc:embedded-database>
+    
+    <jdbc:embedded-database id="dataSource" type="H2">
+    </jdbc:embedded-database> -->
+    
+	<jpa:repositories base-package="com.trinet.*" />
+	
+	<context:component-scan base-package="com.trinet.*" />
+
+	<tx:annotation-driven />
+	
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="hrpDataSource" />
+	</bean>
+	   
+    <bean id="bisSysadmEntityManagerFactory"
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="psDataSource" />
+        <property name="persistenceUnitName" value="bis-sysadm" />
+        
+        <!-- <property name="packagesToScan">
+         <array>
+              <value>com.trinet.ambis.persistence.template.model</value>
+         </array>
+     	</property> -->
+        <property name="persistenceProvider">
+        	<bean class="org.hibernate.jpa.HibernatePersistenceProvider" />
+	    </property>
+	    <property name="jpaProperties">
+	        <props>
+	            <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+	            <!-- <prop key="hibernate.hbm2ddl.auto">create</prop>
+	            <prop key="javax.persistence.sharedCache.mode">NONE</prop> -->
+	        </props>
+	    </property>
+    </bean>
+    
+     <bean id="bisHrpEntityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="hrpDataSource" />
+		<property name="persistenceUnitName" value="bis-hrp" />
+		<property name="packagesToScan">
+         <array>
+              <value>com.trinet.ambis.persistence.model</value>
+              <value>com.trinet.ambis.persistence.template.model</value>
+         </array>
+     	</property>       
+		<property name="persistenceProvider">
+        	<bean class="org.hibernate.jpa.HibernatePersistenceProvider" />
+	    </property>
+	    <property name="jpaProperties">
+	        <props>
+	            <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+	           <!--  <prop key="hibernate.hbm2ddl.auto">create</prop>
+	            <prop key="javax.persistence.sharedCache.mode">NONE</prop> -->
+	        </props>
+	    </property>
+	</bean>
+	
+    
+    <bean id="bisSysadmTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="bisSysadmEntityManagerFactory" />
+    </bean>
+    
+     <bean id="bisHrpTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="bisHrpEntityManagerFactory" />
+    </bean>
+    <!-- 
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="bisHrpEntityManagerFactory" />
+	</bean> -->
+	
+	<jpa:repositories base-package="com.trinet.ambis.persistence.dao.hrp"
+		entity-manager-factory-ref="bisHrpEntityManagerFactory"
+		transaction-manager-ref="bisHrpTransactionManager" />
+		
+	<jpa:repositories base-package="com.trinet.ambis.persistence.dao.ps"
+		entity-manager-factory-ref="bisSysadmEntityManagerFactory"
+		transaction-manager-ref="bisSysadmTransactionManager" />
+	
+	<bean id="hrpJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="hrpDataSource" />
+	</bean>
+		
+	<bean id="spGetUserCompanies" class="com.trinet.ambis.hrp.db.sp.GetUserCompanies">
+		<constructor-arg name="dataSource" ref="hrpDataSource"/>
+	</bean>
+	
+	<bean id="nextBenProgram" class="com.trinet.ambis.persistence.sp.NextBenProgram">
+	    <constructor-arg name="dataSource" ref="psDataSource"/>
+	</bean>
+	
+	<bean id="nextRateTblID" class="com.trinet.ambis.persistence.sp.NextRateTblID">
+	    <constructor-arg name="dataSource" ref="psDataSource"/>
+	</bean>					   
+
+	 <bean id="spGetNextEligRulesId" class="com.trinet.ambis.persistence.sp.GetNextEligRulesId">
+	     <constructor-arg name="dataSource" ref="psDataSource"/>
+	 </bean>
+
+	<bean id="spGetNextBenefitPlan" class="com.trinet.ambis.persistence.sp.GetNextBenefitPlan">
+		<constructor-arg name="dataSource" ref="psDataSource"/>
+	</bean>
+			
+</beans>

@@ -1,0 +1,162 @@
+[
+   {
+      "benefitType": "DISABILITY",
+      "attributeNames": [
+         "Type",
+         "Plans",
+         "States",
+         "Unit Rate",
+         "Unit",
+         "EE Count",
+         "Est Payroll Coverage",
+         "Monthly Cost"
+      ],
+      "selectedGroupDetails": [
+         {
+            "groupName": "W2",
+            "plans": [
+               {
+                  "bundleName": "selectedBundleName",
+                  "attributeValues": [
+                     [
+                        "STD",
+                        "50% STD Company Paid",
+                        "CA, CO, CT, HI, MA, NJ, OR, RI, WA",
+                        "0.0557",
+                        "$100 of covered payroll",
+                        "0",
+                        "$0.00",
+                        "$0.00"
+                     ],
+                     [
+                        "STD",
+                        "50% STD Company Paid",
+                        "Other States not in CA, CO, CT, HI, MA, NJ, OR, RI, WA",
+                        "0.1812",
+                        "$100 of covered payroll",
+                        "3",
+                        "$1,261,000.00",
+                        "$93.78"
+                     ],
+                     [
+                        "LTD",
+                        "50% LTD Company Paid",
+                        "All States",
+                        "0.166",
+                        "$100 of covered payroll",
+                        "3",
+                        "$1,261,000.00",
+                        "$102.51"
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "groupName": "K1",
+            "plans": [
+               {
+                  "bundleName": "selectedBundleName",
+                  "attributeValues": [
+                     [
+                        "STD",
+                        "50% STD Company Paid",
+                        "CA, CO, CT, HI, MA, NJ, OR, RI, WA",
+                        "0.0557",
+                        "$100 of covered payroll",
+                        "1",
+                        "$410,000.00",
+                        "$11.14"
+                     ],
+                     [
+                        "STD",
+                        "50% STD Company Paid",
+                        "Other States not in CA, CO, CT, HI, MA, NJ, OR, RI, WA",
+                        "0.1812",
+                        "$100 of covered payroll",
+                        "1",
+                        "$610,000.00",
+                        "$36.24"
+                     ],
+                     [
+                        "LTD",
+                        "50% LTD Company Paid",
+                        "All States",
+                        "0.166",
+                        "$100 of covered payroll",
+                        "2",
+                        "$1,020,000.00",
+                        "$83.00"
+                     ]
+                  ]
+               }
+            ]
+         }
+      ],
+      "availableGroupDetails": []
+   },
+   {
+      "benefitType": "LIFE",
+      "attributeNames": [
+         "Plan",
+         "Unit Rate",
+         "Unit",
+         "Estimated Payroll Coverage",
+         "Monthly Cost"
+      ],
+      "selectedGroupDetails": [
+         {
+            "groupName": "W2",
+            "plans": [
+               {
+                  "bundleName": "selectedBundleName",
+                  "attributeValues": [
+                     [
+                        "$100,000 Basic Life & AD&D",
+                        "0.1061",
+                        "$1000 of covered payroll",
+                        "$300,000.00",
+                        "$31.83"
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "groupName": "K1",
+            "plans": [
+               {
+                  "bundleName": "selectedBundleName",
+                  "attributeValues": [
+                     [
+                        "$100,000 Basic Life & AD&D",
+                        "0.1061",
+                        "$1000 of covered payroll",
+                        "$200,000.00",
+                        "$21.22"
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "groupName": "TEST-SA",
+            "plans": [
+               {
+                  "bundleName": "selectedBundleName",
+                  "attributeValues": [
+                     [
+                        "$100,000 Basic Life & AD&D",
+                        "0.1061",
+                        "$1000 of covered payroll",
+                        "$200,000.00",
+                        "$21.22"
+                     ]
+                  ]
+               }
+            ]
+         }
+      ],
+      "availableGroupDetails": []
+   }
+]

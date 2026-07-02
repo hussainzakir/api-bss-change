@@ -1,0 +1,77 @@
+[
+   {
+      "benefitPlan": "124842",
+      "covrgCD": "EF",
+      "count": 2
+   },
+   {
+      "benefitPlan": "125220",
+      "covrgCD": "EC",
+      "count": 2
+   },
+   {
+      "benefitPlan": "125246",
+      "covrgCD": "EE",
+      "count": 4
+   },
+   {
+      "benefitPlan": "124842",
+      "covrgCD": "EF",
+      "count": 2
+   },
+   {
+      "benefitPlan": "125220",
+      "covrgCD": "EC",
+      "count": 2
+   },
+   {
+      "benefitPlan": "125266",
+      "covrgCD": "EE",
+      "count": 1
+   },
+   {
+      "benefitPlan": "122179",
+      "covrgCD": "EF",
+      "count": 3
+   },
+   {
+      "benefitPlan": "125224",
+      "covrgCD": "EC",
+      "count": 3
+   },
+   {
+      "benefitPlan": "125246",
+      "covrgCD": "EE",
+      "count": 4
+   },
+   {
+      "benefitPlan": "122179",
+      "covrgCD": "EF",
+      "count": 3
+   },
+   {
+      "benefitPlan": "125224",
+      "covrgCD": "EC",
+      "count": 3
+   },
+   {
+      "benefitPlan": "125246",
+      "covrgCD": "EE",
+      "count": 4
+   },
+   {
+      "benefitPlan": "122179",
+      "covrgCD": "EF",
+      "count": 3
+   },
+   {
+      "benefitPlan": "125224",
+      "covrgCD": "EC",
+      "count": 3
+   },
+   {
+      "benefitPlan": "125246",
+      "covrgCD": "EE",
+      "count": 4
+   }
+]

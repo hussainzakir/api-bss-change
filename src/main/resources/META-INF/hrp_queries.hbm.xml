@@ -1,0 +1,865 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<sql-query name="COMPANY_HQ_OVERRIDES">
+ 	<![CDATA[
+ 		 SELECT co.company, c.descr company_name, co.t2_comp_term_dt term_dt, co.t2_oe_quarter oe_quarter, 
+		       hq.realm_year_id, rpy.plan_year_start, rpy.plan_year_end, c.state, c.postal zip,
+		       hq.state override_hq_state, hq.postal_code override_hq_zip,
+		       case when rpy.plan_year_end > sysdate - 30 then 1 else 0 end can_edit, 
+		       case when rpy.plan_year_end > sysdate - 30 then 1 else 0 end can_delete,
+		       case when rpy.plan_year_end > sysdate - 30 then 
+		            case when 0 = (select count(*) from xbss_hq_exception 
+		            where company = co.company and realm_year_id > hq.realm_year_id) then
+		                 case when 0 < (select count(*) from xbss_realm_plan_year rpy2 where rpy2.oe_quarter = rpy.oe_quarter 
+		                 and rpy2.plan_year_start > rpy.plan_year_start) then 1 else 0 end
+		            else 0 end 
+		            else 0 end can_clone,
+		       case when 0 < (select count(*) from xbss_company c, xbss_strategy s where c.code = hq.company and 
+		       c.realm_year_id = hq.realm_year_id and c.id = s.company_id) then 1 else 0 end has_strategies,
+		       (select min(rpy2.id) from xbss_realm_plan_year rpy2 where rpy2.oe_quarter = rpy.oe_quarter and 
+		       rpy2.plan_year_start > rpy.plan_year_start) next_realm_year_id
+		from xbss_hq_exception hq, xbss_realm_plan_year rpy, ps_t2_clientoption@hrdb_seeker co, ps_company_tbl@hrdb_seeker c
+		where hq.company = co.company
+		  and rpy.id = hq.realm_year_id
+		  and c.company = co.company
+		  and c.effdt = (
+		      case when 0 < (select count(*) from ps_company_tbl@hrdb_seeker c3 where c.company = c3.company and 
+		      c3.effdt <= rpy.hq_lookup_date)
+		           then (select max(effdt) from ps_company_tbl@hrdb_seeker c2 where c.company = c2.company and 
+		           c2.effdt <= rpy.hq_lookup_date)
+		           else (select min(effdt) from ps_company_tbl@hrdb_seeker c4 where c.company = c4.company)
+		      end)
+		 
+		  and (:filter_quarter is null
+		      or :filter_quarter = co.t2_oe_quarter)
+		  and (:company is null
+		      or :company = co.company)
+		order by rpy.plan_year_start desc, co.t2_oe_quarter, co.company	
+	
+    ]]>
+	
+	</sql-query>
+
+	<sql-query name="GET_ROLE_EMAIL_COUNT">
+	    SELECT ORGID,
+	      COUNT(DISTINCT EMPLID)
+	    FROM
+	      ( WITH SELECTED_EMPLOYEES AS
+	      (SELECT R.ORGID,
+	        KY.PERS_KEY EMPLID,
+	        KY.PERSONID
+	      FROM PERSON_KEYS KY,
+	        ALLROLES_VW R
+	      WHERE KY.PERSONID    = R.PERSONID
+	      AND KY.PERS_KEY_TYPE = 2
+	      AND R.ORGID          IN (:companies)
+	      AND S_ROLE           = :role
+	      )
+	    SELECT SE.ORGID,
+	      EM.EMAIL_ADDR,
+	      SE.EMPLID
+	    FROM PS_EMAIL_ADDRESSES@HRDB_SEEKER EM,
+	      SELECTED_EMPLOYEES SE
+	    WHERE EM.E_ADDR_TYPE    IN ('BUSN', 'HOME', 'OTHR')
+	    AND EM.EMPLID            = SE.EMPLID
+	    AND TRIM(EM.EMAIL_ADDR) IS NOT NULL
+	    UNION
+	    SELECT SE.ORGID,
+	      ACC.URL,
+	      SE.EMPLID
+	    FROM PERSON_ACCESSES ACC ,
+	      SELECTED_EMPLOYEES SE
+	    WHERE ACC.PERSONID   = SE.PERSONID
+	    AND ACC.MEDIA        = 'Email'
+	    AND TRIM(ACC.URL)   IS NOT NULL
+	    AND ACC.ACCESS_TYPE IN ('Work', 'Home', 'Other')
+	    AND SYSDATE BETWEEN ACC.EFFDT AND ACC.ENDDT
+	      )
+	    GROUP BY ORGID      
+	</sql-query>
+	
+	<sql-query name="GET_EMPLOYEE_OR_ROLE_EMAIL">
+    <![CDATA[
+	    SELECT EMPLID,
+	      EMAIL_ADDR
+	    FROM
+	      (SELECT EMAIL_ADDR,
+	        EMPLID,
+	        SORT_ORDER,
+	        ROW_NUMBER() OVER (PARTITION BY EMPLID ORDER BY SORT_ORDER) RN
+	      FROM
+	        ( WITH SELECTED_EMPLOYEES AS
+	        (SELECT KY.PERS_KEY EMPLID,
+	          KY.PERSONID
+	        FROM PERSON_KEYS KY,
+	          ALLROLES_VW R
+	        WHERE KY.PERSONID    = R.PERSONID
+	        AND KY.PERS_KEY_TYPE = 2
+	        AND R.ORGID          = :companyCode
+            AND S_ROLE           = :role
+	        UNION
+	        SELECT :emplId, NULL FROM DUAL WHERE 'EE' = :role
+	        )
+	      SELECT EM.EMAIL_ADDR,
+	        SE.EMPLID,
+	        DECODE(EM.PREF_EMAIL_FLAG, 'Y', 1, DECODE(EM.E_ADDR_TYPE, 'BUSN', 2, 'HOME', 3, 'OTHR', 4)) SORT_ORDER
+	      FROM PS_EMAIL_ADDRESSES@HRDB_SEEKER EM,
+	        SELECTED_EMPLOYEES SE
+	      WHERE EM.E_ADDR_TYPE IN ('BUSN', 'HOME', 'OTHR')
+	      AND EM.EMPLID         = SE.EMPLID
+	      AND TRIM(EM.EMAIL_ADDR) IS NOT NULL
+	      UNION
+	      SELECT ACC.URL,
+	        SE.EMPLID,
+	        DECODE(ACC.ACCESS_TYPE, 'Work', 11, 'Home', 12, 'Other', 13) SORT_ORDER
+	      FROM PERSON_ACCESSES ACC ,
+	        SELECTED_EMPLOYEES SE
+	      WHERE ACC.PERSONID   = SE.PERSONID
+	      AND ACC.MEDIA        = 'Email'
+	      AND TRIM(ACC.URL) IS NOT NULL
+	      AND ACC.ACCESS_TYPE IN ('Work', 'Home', 'Other')
+	      AND SYSDATE BETWEEN ACC.EFFDT AND ACC.ENDDT
+	        )
+	      )
+	    WHERE RN = 1
+	    ORDER BY EMPLID
+    ]]>
+	</sql-query>
+
+<sql-query name="ALL_PRIMARY_EXCHG_OR_BUNDLE_BENEFIT_PLANS">
+    <![CDATA[
+	WITH BUNDLE_MEDICAL_PLANS AS (
+	    SELECT
+	        XRBPM.REGIONAL_PLAN_ID AS BUNDLE_PLAN_ID,
+	        XB.ID AS BUNDLE_ID
+	    FROM
+	        XBSS_BUNDLE_PLANS               XBP,
+	        XBSS_BUNDLE                     XB,
+	        XBSS_REGIONAL_BASE_PLAN_MAPPING XRBPM
+	    WHERE
+	            XRBPM.BASE_PLAN_ID = XBP.BASE_BENEFIT_PLAN
+	        AND TO_DATE( :effDt ) BETWEEN XB.EFFDT AND XB.ENDDT
+	        AND TO_DATE( :effDt ) BETWEEN XBP.EFFDT AND XBP.ENDDT
+	        AND XBP.PORTFOLIO_ID IN ( :portfolios )
+	        AND XB.ID = XBP.BUNDLE_ID
+	        AND XBP.OE_QUARTER   = :oeQuarter
+			AND XRBPM.OE_QUARTER = :oeQuarter
+	        AND TO_DATE( :effDt ) BETWEEN XRBPM.EFFDT AND XRBPM.ENDDT
+	         AND (
+            -- When bundleIds is NULL → only STATIC bundles
+            (:bundleIds IS NULL AND XB.TYPE = 'STATIC')
+
+            -- When bundleIds is provided → filter by those IDs
+            OR (:bundleIds IS NOT NULL AND XB.ID IN (:bundleIds))
+            )
+            AND 1 = :returnOnlyBundlePlans
+	)
+	SELECT DISTINCT
+	    PLANS.BENEFIT_PLAN,
+	    PLAN_VW.DESCR,
+	    PLANS.PLAN_TYPE,
+	    PLAN_VW.VENDOR_ID,
+	    NULL AS CROSS_REF_PLAN_ID,
+	    PLANS.PORTFOLIO_ID,
+	    PLANS.REALM_YEAR_ID,
+	    REGIONS.MANDATORY_FLAG,
+	    PLANS.SITUS,
+	    PLANS.PLAN_CATEGORY,
+	    BMP.BUNDLE_ID
+	FROM
+	         XBSS_REALM_PLYR_PLAN PLANS
+	    LEFT JOIN XBSS_RL_REGION_PLANS REGIONS ON REGIONS.REALM_PLYR_PLAN_ID = PLANS.ID
+	    LEFT JOIN BUNDLE_MEDICAL_PLANS BMP ON BMP.BUNDLE_PLAN_ID = PLANS.BENEFIT_PLAN
+	    JOIN XBSS_BENEF_PLAN_MV   PLAN_VW ON PLAN_VW.PLAN_TYPE = PLANS.PLAN_TYPE
+	                                       AND PLAN_VW.BENEFIT_PLAN = PLANS.BENEFIT_PLAN
+	WHERE
+	        PLANS.REALM_YEAR_ID = :planYearId
+	    AND PLANS.PORTFOLIO_ID IN ( :portfolios )
+	    AND PLANS.PLAN_TYPE IN ( '10', '11', '14', '1D', '1V' )
+	    AND PLANS.BENEFIT_PLAN NOT IN ( :outOfRegionPlans )    
+	   	AND (
+			NOT EXISTS (SELECT 1 FROM BUNDLE_MEDICAL_PLANS)
+            OR PLANS.PLAN_TYPE IN ( '11', '14', '1D', '1V' )
+			OR PLANS.BENEFIT_PLAN IN (SELECT BUNDLE_PLAN_ID FROM BUNDLE_MEDICAL_PLANS)
+		)
+		AND (PLANS.IS_BUNDLE_EXCLUSIVE = 0 OR :returnOnlyBundlePlans = 1)
+	    AND ( PLANS.SITUS = :situs
+	          OR PLANS.SITUS IS NULL )
+	    AND PLAN_VW.EFFDT = (
+	        SELECT
+	            MAX(EFFDT)
+	        FROM
+	            XBSS_BENEF_PLAN_MV PV1
+	        WHERE
+	                PV1.PLAN_TYPE = PLAN_VW.PLAN_TYPE
+	            AND PV1.BENEFIT_PLAN = PLAN_VW.BENEFIT_PLAN
+	            AND PV1.EFFDT <= (
+	                SELECT
+	                    LEAST(GREATEST(RPY.PLAN_YEAR_START, TRUNC( SYSDATE )), RPY.PLAN_YEAR_END) AS EFFDT
+	                FROM
+	                    XBSS_REALM_PLAN_YEAR RPY
+	                WHERE
+	                    RPY.ID = PLANS.REALM_YEAR_ID
+	            )
+	    )
+    ]]>
+</sql-query>
+
+<sql-query name="ALL_PRIMARY_EXCHG_OR_BUNDLE_BENEFIT_PLANS_V2">
+	<![CDATA[
+	WITH BUNDLE_MEDICAL_PLANS AS (
+		SELECT
+			XRBPM.REGIONAL_PLAN_ID AS BUNDLE_PLAN_ID,
+			XB.ID AS BUNDLE_ID
+		FROM
+			XBSS_BUNDLE_QUARTER_PLAN        BQP,
+			XBSS_BUNDLE_QUARTER             BQ,
+			XBSS_BUNDLE                     XB,
+			XBSS_REGIONAL_BASE_PLAN_MAPPING XRBPM
+		WHERE
+				XRBPM.BASE_PLAN_ID = BQP.BASE_BENEFIT_PLAN
+			AND BQP.BUNDLE_QUARTER_ID  = BQ.ID
+			AND BQ.BUNDLE_ID           = XB.ID
+			AND TO_DATE( :effDt ) BETWEEN XB.EFFDT  AND XB.ENDDT
+			AND TO_DATE( :effDt ) BETWEEN BQP.EFFDT AND BQP.ENDDT
+			AND BQP.PORTFOLIO_ID IN ( :portfolios )
+			AND BQ.OE_QUARTER    = :oeQuarter
+			AND XRBPM.OE_QUARTER = :oeQuarter
+			AND TO_DATE( :effDt ) BETWEEN XRBPM.EFFDT AND XRBPM.ENDDT
+			 AND (
+            -- When bundleIds is NULL → only STATIC bundles
+            (:bundleIds IS NULL AND XB.TYPE = 'STATIC')
+
+            -- When bundleIds is provided → filter by those IDs
+            OR (:bundleIds IS NOT NULL AND XB.ID IN (:bundleIds))
+            )
+            AND 1 = :returnOnlyBundlePlans
+	)
+	SELECT DISTINCT
+		PLANS.BENEFIT_PLAN,
+		PLAN_VW.DESCR,
+		PLANS.PLAN_TYPE,
+		PLAN_VW.VENDOR_ID,
+		NULL AS CROSS_REF_PLAN_ID,
+		PLANS.PORTFOLIO_ID,
+		PLANS.REALM_YEAR_ID,
+		REGIONS.MANDATORY_FLAG,
+		PLANS.SITUS,
+		PLANS.PLAN_CATEGORY,
+		BMP.BUNDLE_ID
+	FROM
+			 XBSS_REALM_PLYR_PLAN PLANS
+		LEFT JOIN XBSS_RL_REGION_PLANS REGIONS ON REGIONS.REALM_PLYR_PLAN_ID = PLANS.ID
+		LEFT JOIN BUNDLE_MEDICAL_PLANS BMP      ON BMP.BUNDLE_PLAN_ID = PLANS.BENEFIT_PLAN
+		JOIN XBSS_BENEF_PLAN_MV   PLAN_VW ON PLAN_VW.PLAN_TYPE    = PLANS.PLAN_TYPE
+										   AND PLAN_VW.BENEFIT_PLAN = PLANS.BENEFIT_PLAN
+	WHERE
+			PLANS.REALM_YEAR_ID = :planYearId
+		AND PLANS.PORTFOLIO_ID IN ( :portfolios )
+		AND PLANS.PLAN_TYPE IN ( '10', '11', '14', '1D', '1V' )
+		AND PLANS.BENEFIT_PLAN NOT IN ( :outOfRegionPlans )
+		AND (
+			NOT EXISTS (SELECT 1 FROM BUNDLE_MEDICAL_PLANS)
+			OR PLANS.PLAN_TYPE IN ( '11', '14', '1D', '1V' )
+			OR PLANS.BENEFIT_PLAN IN (SELECT BUNDLE_PLAN_ID FROM BUNDLE_MEDICAL_PLANS)
+		)
+		AND (PLANS.IS_BUNDLE_EXCLUSIVE = 0 OR :returnOnlyBundlePlans = 1)
+		AND ( PLANS.SITUS = :situs
+			  OR PLANS.SITUS IS NULL )
+		AND PLAN_VW.EFFDT = (
+			SELECT
+				MAX(EFFDT)
+			FROM
+				XBSS_BENEF_PLAN_MV PV1
+			WHERE
+					PV1.PLAN_TYPE    = PLAN_VW.PLAN_TYPE
+				AND PV1.BENEFIT_PLAN = PLAN_VW.BENEFIT_PLAN
+				AND PV1.EFFDT <= (
+					SELECT
+						LEAST(GREATEST(RPY.PLAN_YEAR_START, TRUNC( SYSDATE )), RPY.PLAN_YEAR_END) AS EFFDT
+					FROM
+						XBSS_REALM_PLAN_YEAR RPY
+					WHERE
+						RPY.ID = PLANS.REALM_YEAR_ID
+				)
+		)
+	]]>
+</sql-query>
+	
+<sql-query name="benefitPlansForAdditionalBenefits">
+SELECT PLANS.BENEFIT_PLAN
+     , PLAN_VW.DESCR
+     , PLANS.PLAN_TYPE
+     , PLAN_VW.VENDOR_ID
+     , NULL AS CROSS_REF_PLAN_ID
+     , PLANS.REALM_YEAR_ID
+     , REGIONS.MANDATORY_FLAG
+     , DSP.DISPLAY_SEQ
+  FROM XBSS_REALM_PLYR_PLAN PLANS
+         LEFT OUTER JOIN XBSS_PLAN_DISP_SEQ DSP
+                  ON DSP.REALM_YEAR_ID = PLANS.REALM_YEAR_ID
+                 AND DSP.PLAN_TYPE = PLANS.PLAN_TYPE
+                 AND DSP.BENEFIT_PLAN = PLANS.BENEFIT_PLAN
+       JOIN XBSS_RL_REGION_PLANS REGIONS ON REGIONS.REALM_PLYR_PLAN_ID = PLANS.ID
+       JOIN XBSS_BENEF_PLAN_MV PLAN_VW ON PLAN_VW.PLAN_TYPE = PLANS.PLAN_TYPE
+                                      AND PLAN_VW.BENEFIT_PLAN = PLANS.BENEFIT_PLAN
+ WHERE PLANS.REALM_YEAR_ID = :planYearId
+   AND PLANS.PLAN_TYPE IN ( :planTypes )
+   AND REGIONS.MANDATORY_FLAG = 1
+   AND PLAN_VW.EFFDT = (
+       SELECT MAX(EFFDT)
+         FROM XBSS_BENEF_PLAN_MV PV1
+        WHERE PV1.PLAN_TYPE = PLAN_VW.PLAN_TYPE
+          AND PV1.BENEFIT_PLAN = PLAN_VW.BENEFIT_PLAN
+          AND PV1.EFFDT &lt;= (
+              SELECT LEAST( GREATEST( RPY.PLAN_YEAR_START, TRUNC( sysdate ) ), RPY.PLAN_YEAR_END ) AS EFFDT
+                FROM XBSS_REALM_PLAN_YEAR RPY
+               WHERE RPY.ID = PLANS.REALM_YEAR_ID ) )   
+UNION
+SELECT PLANS.BENEFIT_PLAN
+     , PLAN_VW.DESCR
+     , PLANS.PLAN_TYPE
+     , PLAN_VW.VENDOR_ID
+     , NULL AS CROSS_REF_PLAN_ID
+     , PLANS.REALM_YEAR_ID
+     , REGIONS.MANDATORY_FLAG
+     , DSP.DISPLAY_SEQ
+  FROM XBSS_REALM_PLYR_PLAN PLANS
+         LEFT OUTER JOIN XBSS_PLAN_DISP_SEQ DSP
+                  ON DSP.REALM_YEAR_ID = PLANS.REALM_YEAR_ID
+                 AND DSP.PLAN_TYPE = PLANS.PLAN_TYPE
+                 AND DSP.BENEFIT_PLAN = PLANS.BENEFIT_PLAN
+       LEFT JOIN XBSS_RL_REGION_PLANS REGIONS ON REGIONS.REALM_PLYR_PLAN_ID = PLANS.ID
+       JOIN XBSS_BENEF_PLAN_MV PLAN_VW ON PLAN_VW.PLAN_TYPE = PLANS.PLAN_TYPE
+                                      AND PLAN_VW.BENEFIT_PLAN = PLANS.BENEFIT_PLAN
+ WHERE PLANS.REALM_YEAR_ID = :planYearId
+   AND PLANS.PLAN_TYPE IN ( :planTypes )
+   AND PLANS.BENEFIT_PLAN NOT IN ( SELECT PLANS_3.BENEFIT_PLAN
+                                     FROM XBSS_REALM_PLYR_PLAN PLANS_3
+                                          LEFT JOIN XBSS_RL_REGION_PLANS REGIONS_3
+                                             ON REGIONS_3.REALM_PLYR_PLAN_ID = PLANS_3.ID
+                                    WHERE PLANS_3.REALM_YEAR_ID = :planYearId
+                                      AND REGIONS_3.MANDATORY_FLAG = 1 )
+   AND PLAN_VW.EFFDT = (
+       SELECT MAX(EFFDT)
+         FROM XBSS_BENEF_PLAN_MV PV1
+        WHERE PV1.PLAN_TYPE = PLAN_VW.PLAN_TYPE
+          AND PV1.BENEFIT_PLAN = PLAN_VW.BENEFIT_PLAN
+          AND PV1.EFFDT &lt;= (
+              SELECT LEAST( GREATEST( RPY.PLAN_YEAR_START, TRUNC( sysdate ) ), RPY.PLAN_YEAR_END ) AS EFFDT
+                FROM XBSS_REALM_PLAN_YEAR RPY
+               WHERE RPY.ID = PLANS.REALM_YEAR_ID ) )   
+</sql-query>
+
+	<sql-query name="autoSelectPlansByRealm">
+		SELECT ASP.BENEFIT_PLAN,
+		  ( SELECT AU.DESCR FROM XBSS_AUTOSELECT AU WHERE AU.ID = ASP.AUTOSELECT_ID
+		  ) AS GROUP_NAME
+		FROM XBSS_AUTOSELECT_PLAN ASP
+		WHERE ( ASP.REALM_YEAR_ID, ASP.AUTOSELECT_ID ) IN
+		  (SELECT gp.realm_year_id,
+		    gp.autoselect_id
+		  FROM xbss_autoselect_plan gp
+		  WHERE GP.BENEFIT_PLAN IN
+		    (SELECT plan.benefit_plan
+		    FROM xbss_realm_plyr_plan plan
+		    WHERE plan.realm_year_id = :planYearId
+		    )
+		  )
+	</sql-query>
+	
+	    <sql-query name="updateEmployeesBenefitGroup">
+        update xbss_employee set UPDATED_BENEFIT_PROGRAM = (select distinct benefit_program from xbss_group where id =:groupId), BENEFIT_GROUP_NAME = (select distinct descr from xbss_group where id =:groupId),  ELIG_CONFIG1 = ( select distinct ELIG_CONFIG1 from xbss_group where id =:groupId),BENEFIT_GROUP_ID =:groupId where 
+        EMPLID in (:listOfEmployeeIds)        </sql-query>
+	    
+	    <sql-query name="updateGroupHeadCount">
+       		update xbss_group set headCount=:headCount where company_id=:company and benefit_program =:benefitProgram
+   	    </sql-query>
+	    
+	     <sql-query name="updateCompanyHeadCount">
+			update xbss_company set head_Count=:headCount where id =:company
+   	    </sql-query>
+	    
+	    <sql-query name="getEmployeeSelectionAndBenefitProgram">
+        select distinct EMPLID, BENEFIT_PROGRAM, UPDATED_BENEFIT_PROGRAM, BENEFIT_GROUP_ID, BENEFIT_GROUP_NAME, ELIG_CONFIG1  from xbss_employee where COMPANY =:companyCode and realm_year_id =:realmYearId 
+        </sql-query>
+        
+	    <sql-query name="getBenefitProgramDetails">
+        select g.BENEFIT_PROGRAM, g.ID, g.DESCR, g.ELIG_CONFIG1  from xbss_group g, xbss_company c where c.id = g.company_id and c.code =:companyCode and c.realm_year_id =:realmYearId
+        </sql-query>   
+    
+    <sql-query name="XBSS_EMPLOYEE_STRATEGY_GROUP">
+        SELECT
+		    EMPLID,
+		    EMPL_RCD,
+		    STRATEGY_GROUP_ID,
+		    CURRENT_BENEFIT_PROGRAM,
+		    FUTURE_BENEFIT_PROGRAM,
+		    FUTURE_GROUP_DESCR,
+		    FUTURE_GROUP_ID,
+		    CASE
+		        WHEN FUTURE_BENEFIT_PROGRAM = CURRENT_BENEFIT_PROGRAM THEN
+		            'false'
+		        ELSE
+		            'true'
+		    END AS BENEFIT_PROGRAM_CHANGED
+		FROM
+		    XBSS_EMPL_STRATEGY_GROUP_VW
+		WHERE
+		    STRATEGY_ID = :STRATEGY_ID
+    </sql-query>
+
+	<sql-query name="EMPLOYEE_DETAILS_BY_STRATEGY">
+		SELECT
+		XESGV.EMPLID,
+		XESGV.EMPL_RCD,
+		XESGV.STRATEGY_GROUP_ID,
+		XESGV.STRATEGY_ID,
+		XESGV.CURRENT_BENEFIT_PROGRAM,
+		XESGV.CURRENT_ELIG_CONFIG1,
+		XESGV.FUTURE_BENEFIT_PROGRAM,
+		XESGV.FUTURE_GROUP_DESCR,
+		XESGV.FUTURE_GROUP_ID,
+		XESGV.FUTURE_ELIG_CONFIG1
+		FROM
+		XBSS_EMPL_STRATEGY_GROUP_VW XESGV
+		WHERE
+		XESGV.STRATEGY_ID = :STRATEGY_ID
+	</sql-query>
+	
+	<sql-query name="EMPLOYEES_BY_STRATEGY_GROUP">
+		SELECT
+		XESGV.EMPLID
+		FROM
+		XBSS_EMPL_STRATEGY_GROUP_VW XESGV
+		WHERE
+		XESGV.STRATEGY_ID = :STRATEGY_ID
+		AND XESGV.FUTURE_GROUP_ID=:GROUP_ID
+	</sql-query>
+
+    <sql-query name="DELETE_EMPLOYEE">
+        DELETE FROM XBSS_EMPLOYEE
+        WHERE EMPLID IN (:LISTOFEMPLIDS)
+    </sql-query>
+    
+    <sql-query name="DELETE_EMPLOYEE_STRATEGY_GROUP">
+        DELETE FROM XBSS_EMPLOYEE_STRATEGY_GROUP
+        WHERE EMPLID IN (:LISTOFEMPLIDS)
+    </sql-query> 	    
+	    
+	<sql-query name="XBSS_EMPLOYEE_PLAN_MAPPING">
+		<![CDATA[
+		WITH EMPLOYEE_PLAN_MAPPING AS 
+	        (SELECT EC.EMPLID,
+	               PD.PLAN_TYPE,
+	               PD.BENEFIT_PLAN cur_benefit_plan,
+	               PMC.BENEFIT_PLAN next_ben_plan,
+	               PMA.BENEFIT_PLAN next_alt_ben_plan,
+	               EC.BENEFIT_PROGRAM cur_ben_program
+	          FROM XBSS_EMPLOYEE_CENSUS EC,
+	               XBSS_EMPLOYEE_PLAN_DATA PD
+	               LEFT OUTER JOIN XBSS_EMPLOYEE_PLAN_MAPPING PMC
+	                     ON PMC.EMP_PLAN_DATA_ID = PD.ID
+	                    AND PD.PRIMARY_VENDOR    = PMC.PRIMARY_VENDOR
+	                    AND PD.PLAN_TYPE         = PMC.PLAN_TYPE
+	               LEFT OUTER JOIN XBSS_EMPLOYEE_PLAN_MAPPING PMA
+	                     ON PMA.EMP_PLAN_DATA_ID = PD.ID
+	                    AND PD.PRIMARY_VENDOR  <> PMA.PRIMARY_VENDOR
+	                    AND PD.PLAN_TYPE        = PMA.plan_type
+	         WHERE EC.ID           = PD.EE_CEN_ID
+	           AND PD.PLAN_TYPE    IN (:medicalPlanTypes)
+	           AND EC.COMPANY      = :companyCode
+	           AND EC.REALM_YEAR_ID = :realmYearId
+	         UNION  
+	        SELECT EC.EMPLID,
+	               PD.PLAN_TYPE,
+	               PD.BENEFIT_PLAN cur_benefit_plan,
+	               PMC.BENEFIT_PLAN next_ben_plan,
+	               PMA.BENEFIT_PLAN next_alt_ben_plan,
+	               EC.BENEFIT_PROGRAM cur_ben_program
+	          FROM XBSS_EMPLOYEE_CENSUS EC,
+	               XBSS_EMPLOYEE_PLAN_DATA PD
+	               LEFT OUTER JOIN XBSS_EMPLOYEE_PLAN_MAPPING PMC
+	                     ON PMC.EMP_PLAN_DATA_ID = PD.ID
+	                    AND PD.PRIMARY_VENDOR    = PMC.PRIMARY_VENDOR
+	                    AND PD.PLAN_TYPE         = PMC.PLAN_TYPE
+	               LEFT OUTER JOIN XBSS_EMPLOYEE_PLAN_MAPPING PMA
+	                     ON PMA.EMP_PLAN_DATA_ID = PD.ID
+	                    AND PD.PLAN_TYPE         <> PMA.PLAN_TYPE
+	                    AND PD.PLAN_TYPE         IN (:dentalPlanTypes)
+	         WHERE EC.ID           = PD.EE_CEN_ID
+	           AND PD.PLAN_TYPE    IN (:dentalPlanTypes)
+	           AND EC.COMPANY      = :companyCode
+	           AND EC.REALM_YEAR_ID = :realmYearId
+	         UNION  
+	        SELECT EC.EMPLID,
+	               PD.PLAN_TYPE,
+	               PD.BENEFIT_PLAN cur_benefit_plan,
+	               PMC.BENEFIT_PLAN next_ben_plan,
+	               PMA.BENEFIT_PLAN next_alt_ben_plan,
+	               EC.BENEFIT_PROGRAM cur_ben_program
+	          FROM XBSS_EMPLOYEE_CENSUS EC,
+	               XBSS_EMPLOYEE_PLAN_DATA PD
+	               LEFT OUTER JOIN XBSS_EMPLOYEE_PLAN_MAPPING PMC
+	                     ON PMC.EMP_PLAN_DATA_ID = PD.ID
+	                    AND PD.PRIMARY_VENDOR    = PMC.PRIMARY_VENDOR
+	                    AND PD.PLAN_TYPE         = PMC.PLAN_TYPE
+	               LEFT OUTER JOIN XBSS_EMPLOYEE_PLAN_MAPPING PMA
+	                     ON PMA.EMP_PLAN_DATA_ID = PD.ID
+	                    AND PD.PLAN_TYPE         <> PMA.PLAN_TYPE
+	                    AND PD.PLAN_TYPE         IN (:visionPlanTypes)
+	         WHERE EC.ID           = PD.EE_CEN_ID
+	           AND PD.PLAN_TYPE    IN (:visionPlanTypes)
+	           AND EC.COMPANY      = :companyCode
+	           AND EC.REALM_YEAR_ID = :realmYearId
+	       )
+	       SELECT epm.EMPLID,
+	               epm.PLAN_TYPE,
+	               epm.cur_benefit_plan,
+	               epm.next_ben_plan,
+	               epm.next_alt_ben_plan,
+	               epm.cur_ben_program
+	         FROM  EMPLOYEE_PLAN_MAPPING epm,
+    			   PS_NAMES@HRDB_SEEKER pn
+	       	 WHERE pn.EMPLID      = epm.EMPLID
+           	   AND pn.NAME_TYPE   = 'PRI'
+               AND pn.EFFDT       = (
+		              SELECT MAX( pn1.EFFDT )
+		                FROM PS_NAMES@HRDB_SEEKER pn1
+		               WHERE pn1.EMPLID    = pn.EMPLID
+		                 AND pn1.NAME_TYPE = pn.NAME_TYPE
+		                 AND pn1.EFFDT     < :effDate )
+		   	 ORDER BY pn.LAST_NAME, pn.FIRST_NAME, pn.MIDDLE_NAME
+		]]>
+    </sql-query>   
+    
+    <sql-query name="GET_EXCEPTION_APPROVERS">
+		SELECT xea.APPROVER,
+		  TRIM(TRIM(psn.FIRST_NAME
+		  || ' '
+		  || psn.MIDDLE_NAME)
+		  || ' '
+		  || psn.LAST_NAME) AS FULL_NAME,
+		  xea.EXCEPTION_TYPE
+		FROM XBSS_EXCEPTION_APPROVERS xea
+		JOIN PS_NAMES@HRDB_SEEKER psn
+		ON xea.APPROVER = psn.EMPLID
+	</sql-query>
+	
+	<sql-query name="FIND_GATEWAY_APP_ACCESSIBLE_ROLES">
+		SELECT APPS_ID,
+		  S_ROLE
+		FROM BENEFITS_COMMON.ADMIN_APPS_ROLES ar
+    	JOIN BENEFITS_COMMON.ADMIN_APPS aa
+		ON ar.APPS_ID = aa.ID
+    	AND aa.APP_KEY = :appKey
+	</sql-query>
+	
+<sql-query name="PICK_CHOOSE_FLAG_WITH_EXCEPTION">
+<![CDATA[
+SELECT RL.KEY, RL.VALUE
+     , CASE
+          WHEN EXISTS ( SELECT 'X'
+                          FROM XBSS_PLAN_DESELECTION_EXCEPTION
+                         WHERE COMPANY = :companyCode
+                           AND ACTIVE = '1'
+                           AND TO_DATE( :effDt ) BETWEEN START_DATE AND END_DATE )
+          THEN '1'
+          ELSE '0'
+       END  EXCEPTION
+  FROM XBSS_REALM_PLYR_RULES RL
+     , XBSS_REALM_PLAN_YEAR RPY
+ WHERE RPY.ID = :realmYearId
+   AND RL.OE_QUARTER = RPY.OE_QUARTER
+   AND RPY.PLAN_YEAR_START BETWEEN RL.EFFDT AND RL.ENDDT
+   AND RL.KEY = 'PICK_CHOOSE_FLAG'
+]]>
+</sql-query>
+	
+	<sql-query name="BEN_CONFIRMATION_STATEMENTS">
+		<![CDATA[
+			WITH SUBMISSIONS AS 
+			    (SELECT
+			        tmpRes.*,
+			        ROW_NUMBER()
+			            OVER(PARTITION BY realm_id, effective_date
+			                 ORDER BY submmitted_dt DESC, ss_id desc
+			            ) AS rownumber
+			        FROM  (
+			                SELECT *
+			                    FROM(
+			                        SELECT
+			                            s.id strategy_id,
+			                            py.id as Realm_ID,
+			                            py.plan_year_start,
+			                            py.plan_year_end,
+			                            CASE
+			                                WHEN ss.service_order IS NULL THEN
+			                                    py.plan_year_start
+			                                ELSE
+			                                    (
+			                                        SELECT
+			                                            MAX(mid_year_effdt)
+			                                        FROM
+			                                            xbss_sched_mid_year_funding smf,
+			                                             xbss_company c
+			                                        WHERE                              
+			                                             smf.service_order_num = ss.service_order
+			                                         AND smf.company_id = c.id
+			                                         AND c.realm_year_id = ss.realm_year_id
+			                                         AND c.code = :company
+			                                    )
+			                            END effective_date,
+			                            CASE
+			                                WHEN ss.service_order IS NOT NULL
+			                                THEN
+			                                    'Mid-Year Submit'
+			                                ELSE
+			                                    CASE
+			                                        WHEN s.default_submit = 1 THEN
+			                                            'Default Submit'
+			                                        ELSE
+                                                        CASE
+                                                            WHEN ss.user_id = 'BANDCHANGE' THEN
+                                                                'TriNet'
+                                                            ELSE
+                                                                nvl((
+                                                                    SELECT NM.NAME_DISPLAY
+                                                                  FROM PS_NAMES@hrdb_seeker NM
+                                                                  WHERE NM.EMPLID = ss.user_id
+                                                                  AND NM.NAME_TYPE = 'PRI'
+                                                                  AND NM.EFFDT = (
+                                                                  SELECT MAX(EFFDT)
+                                                                  FROM PS_NAMES@hrdb_seeker N1
+                                                                  WHERE N1.EMPLID = NM.EMPLID
+                                                                  AND N1.NAME_TYPE = NM.NAME_TYPE
+                                                                  AND N1.EFFDT < sysdate )
+                                                                ), 'Unknown')
+                                                        END
+                                                END
+			                            END submit_user,
+			                            ss.confirmation_number,
+			                            ss.create_time   submmitted_dt,
+                                        ss.id ss_id
+			                        FROM
+			                            xbss_strategy          s,
+			                            xbss_company           c,
+			                            xbss_realm_plan_year   py,
+			                            xbss_submit_status     ss
+			                        WHERE
+			                            company = :company
+			                            AND ss.statement_upload_status = 'SUCCESS'
+			                            AND s.id = ss.strategy_id
+			                            AND s.company_id = c.id
+			                            AND c.realm_year_id = py.id
+			                )
+			        ) tmpRes
+			    )
+			SELECT * FROM SUBMISSIONS 
+			WHERE rownumber = 1
+			ORDER BY effective_date DESC
+		]]>
+	</sql-query>
+	
+	<sql-query name="FEATURE_ON_OFF_FLAG">
+		<![CDATA[
+		  with app_feature_flags as (
+		        select key, flag_level, flag_level_value, value, create_time, 3 priority
+		        from xbss_feature_flag
+		        where flag_level = 'Global'
+		          and trunc(sysdate) between trunc(effdt) and trunc(enddt)
+		        union
+		        select key, flag_level, flag_level_value, value, create_time, 2 priority
+		        from xbss_feature_flag
+		        where flag_level = 'Quarter'
+		          and FLAG_LEVEL_VALUE = (
+		                        select oe_quarter 
+		                        from xbss_realm_plan_year rpy
+		                        where rpy.id = :planYearId)
+		          and trunc(sysdate) between trunc(effdt) and trunc(enddt)
+		        union
+		        select key, flag_level, flag_level_value, value, create_time, 1 priority
+		        from xbss_feature_flag
+		        where flag_level = 'Company'
+		          and FLAG_LEVEL_VALUE = :companyCode
+		          and trunc(sysdate) between trunc(effdt) and trunc(enddt)
+		        order by key)
+	        select key, value
+	        from app_feature_flags ff
+	        where ff.priority = (select min(priority) from app_feature_flags ff2 where ff2.key = ff.key)
+	        order by create_time desc
+		]]>
+	</sql-query>
+	<sql-query name="GET_PLAN_YEAR_NEW_OVERRIDE">
+	    <![CDATA[
+			 SELECT rpy.id realm_year_id, rpy.plan_year_start, rpy.plan_year_end, 
+				 case when 0 < (  select count(*) from xbss_company c, xbss_strategy s where c.code =:company and
+          c.realm_year_id NOT IN ( SELECT realm_year_id FROM xbss_hq_exception WHERE company = :company ) and 
+          c.id = s.company_id )  then 1 else 0 end has_strategies
+			FROM
+				xbss_realm_plan_year rpy,
+				ps_t2_clientoption@hrdb_seeker co
+			WHERE
+					co.company = :company AND co.t2_oe_quarter = rpy.oe_quarter 
+					AND rpy.plan_year_end >= sysdate - 30 AND rpy.id NOT IN (
+					SELECT
+						realm_year_id
+					FROM
+						xbss_hq_exception
+					WHERE
+						company = :company
+				)
+			ORDER BY
+				rpy.plan_year_start DESC;
+	    ]]>
+	</sql-query>
+	<sql-query name="GET_COMPANY_HQ_FOR_PLAN_YEAR">
+	    <![CDATA[
+	 Select c.descr company_name, rpy.id realm_year_id, rpy.oe_quarter, rpy.plan_year_start, rpy.plan_year_end, c.state, c.postal zip,
+       case when 0 < (select count(*) from xbss_company c1, xbss_strategy s where c1.code = c.company and c1.realm_year_id = rpy.id and c1.id = s.company_id) then 1 else 0 end has_strategies
+	 from xbss_realm_plan_year rpy, ps_t2_clientoption@hrdb_seeker co, ps_company_tbl@hrdb_seeker c
+		where co.company = :company
+		  and co.company = c.company
+		  and c.effdt = 
+		      case when 0 < (select count(*) from ps_company_tbl@hrdb_seeker c3 where c.company = c3.company and c3.effdt <= rpy.hq_lookup_date)
+		           then (select max(effdt) from ps_company_tbl@hrdb_seeker c2 where c.company = c2.company and c2.effdt <= rpy.hq_lookup_date)
+		           else (select min(effdt) from ps_company_tbl@hrdb_seeker c4 where c.company = c4.company) end
+		  and co.t2_oe_quarter = rpy.oe_quarter
+		  and rpy.plan_year_end >= sysdate - 30
+		  and rpy.id not in (select realm_year_id from xbss_hq_exception where company = :company)
+		order by rpy.plan_year_start desc
+	    ]]>
+	</sql-query>
+	<sql-query name="regionalBasePlanMappings">
+	    <![CDATA[
+		 SELECT rbpm.regional_plan_id, rbpm.base_plan_id, rbpm.base_plan_descr 
+		 FROM xbss_regional_base_plan_mapping rbpm
+		 WHERE rbpm.oe_quarter = :oeQuarter
+		 AND rbpm.realm_id = :realmId
+		 AND :effDt BETWEEN rbpm.effdt AND rbpm.enddt
+	    ]]>
+	</sql-query>
+
+    <sql-query name="SELECTED_REGIONAL_PLANS_FOR_BASE_PLAN_ID">
+        <![CDATA[
+		 SELECT RBPM.REGIONAL_PLAN_ID
+		   FROM XBSS_REGIONAL_BASE_PLAN_MAPPING RBPM,
+              XBSS_STRATEGY_GROUP_PLANSELECT SGP,
+              XBSS_REALM_PLAN_YEAR RPY
+		  WHERE RBPM.REGIONAL_PLAN_ID = SGP.BENEFIT_PLAN
+          AND RPY.OE_QUARTER = RBPM.OE_QUARTER
+		    AND RPY.REALM_ID = RBPM.REALM_ID
+		    AND RBPM.BASE_PLAN_ID = :basePlanId
+          AND SGP.STRATEGY_ID = :strategyId
+          AND SGP.GROUP_ID = :groupId
+          AND RPY.ID = :realmPlanYearId
+          AND RPY.PLAN_YEAR_START BETWEEN RBPM.EFFDT AND RBPM.ENDDT
+	    ]]>
+    </sql-query>
+	
+    <sql-query name="EMPLOYEE_STRATEGY_GROUP_DATA_LIST">
+        <![CDATA[
+            SELECT EG.emplid
+                 , EG.strategy_id
+                 , EG.strategy_group_id
+                 , G.group_type
+                 , G.DESCR
+                 , G.BENEFIT_PROGRAM
+              FROM XBSS_EMPL_STRATEGY_GROUP_VW EG
+                 , XBSS_GROUP G
+             WHERE CODE = :companyCode
+               AND EG.future_group_id = G.id
+        ]]>
+    </sql-query>
+	
+	<sql-query name="STRATEGY_GROUP_DATA_LIST">
+    	<![CDATA[ 
+        	SELECT sg.id, sg.strategy_id,gp.group_type,gp.descr
+			FROM xbss_company c, XBSS_STRATEGY s, XBSS_STRATEGY_GROUP sg,XBSS_GROUP gp
+			WHERE c.id=s.company_id
+			AND s.id=sg.strategy_id
+			AND sg.group_id=gp.id
+			AND s.status= 'A' AND sg.status='A' AND gp.status='A'
+			AND (sg.default_group=1 OR gp.GROUP_TYPE='K1' or gp.descr='W2 MA')
+			AND c.code=:companyCode
+		]]>
+	</sql-query>
+	
+	<sql-query name="GET_ZIPCODES_STATES_LIST">
+		SELECT ZIPCODE, STATE
+		FROM BENEFITS_COMMON.ZIPCODES z
+    	WHERE z.ZIPCODE IN (:zipcodes)
+	</sql-query>
+	
+	<sql-query name="GET_CURRENT_FUTURE_BENEFIT_PLANS">
+		<![CDATA[ 
+		SELECT DISTINCT
+    x1.benefit_plan old_benefit_plan,
+    x2.benefit_plan new_benefit_plan
+FROM
+    xbss_realm_plyr_plan x1,
+    xbss_realm_plyr_plan x2,
+    XBSS_BENEF_PLAN_MV M1,
+    XBSS_BENEF_PLAN_MV M2
+WHERE
+        x1.benefit_plan = m1.benefit_plan
+    AND x2.benefit_plan = m2.benefit_plan
+    AND x1.realm_year_id = :oldPlanYear
+    AND x2.realm_year_id = :newPlanYear
+    AND ((:applySitus = 0 AND  m2.descr = m1.descr ) OR (:applySitus != 0 AND UPPER(m2.descr) = UPPER(m1.descr)))
+    AND (:applySitus = 0 OR (x1.situs != x2.situs OR x1.situs is NULL))
+    AND x2.plan_type = x1.plan_type
+    AND m2.plan_type = m1.plan_type
+    AND m1.effdt = (
+        SELECT
+            MAX(effdt)
+        FROM
+            xbss_benef_plan_mv b1
+        WHERE
+                b1.plan_type = m1.plan_type
+            AND b1.benefit_plan = m1.benefit_plan
+            AND b1.effdt <= :oldPlanYearEffDt
+    )
+    AND m2.effdt = (
+        SELECT
+            MAX(effdt)
+        FROM
+            xbss_benef_plan_mv b1
+        WHERE
+                b1.plan_type = m2.plan_type
+            AND b1.benefit_plan = m2.benefit_plan
+            AND b1.effdt <= :newPlanYearEffDt
+    )
+    AND m1.plan_type NOT IN ( '30', '31' ) AND x2.portfolio_id = x1.portfolio_id
+		]]>
+	</sql-query>
+	
+	<sql-query name="GET_BENEFIT_PLANS_BY_STRATEGY_GROUP">
+		<![CDATA[ 
+		SELECT DISTINCT XSGP.BENEFIT_PLAN benefit_plan, XPE.DESCR carrier,
+		XC.BN_EMPLR_RATE emplrCost, XC.BN_EMPL_RATE empCost 	
+		FROM XBSS_STRATEGY_GROUP_PLANSELECT XSGP,
+			XBSS_REALM_PLYR_PLAN XRPP, 
+			XBSS_PORTFOLIO_EFFDT XPE, 
+         	XBSS_CONTRIBUTION XC
+		WHERE 
+       		XRPP.PORTFOLIO_ID = XPE.PORTFOLIO_ID
+       		AND XSGP.BENEFIT_PLAN = XRPP.BENEFIT_PLAN
+        	AND XSGP.PLAN_TYPE    = XRPP.PLAN_TYPE
+        	AND XC.PLAN_SELECTION_ID = XSGP.ID
+			AND XSGP.PLAN_TYPE    = :planType
+			AND XSGP.STRATEGY_ID=:strategyId
+        	AND XSGP.GROUP_ID = :groupId
+        	AND XC.COVERAGE_LEVEL = :cvgTierCode
+       		AND XPE.EFFDT =(
+                SELECT MAX(EFFDT)
+                  FROM XBSS_PORTFOLIO_EFFDT P1
+                 WHERE P1.PORTFOLIO_ID = XRPP.PORTFOLIO_ID
+                   AND P1.EFFDT <= :effDate) 
+		]]>
+	</sql-query>
+
+</hibernate-mapping>

@@ -1,0 +1,146 @@
+{
+   "124842": {
+      "regionCode": [
+         "ALL"
+      ],
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employee",
+            "cost": 100
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 110
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 130
+         },
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 120
+         }
+      ]
+   },
+   "125224": {
+      "regionCode": [
+         "ALL"
+      ],
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employee",
+            "cost": 90.51
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 110.11
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 130.31
+         },
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 115.21
+         }
+      ]
+   },
+   "125246": {
+      "regionCode": [
+         "ALL"
+      ],
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employee",
+            "cost": 800.51
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 850.11
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 1000.31
+         },
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 900.21
+         }
+      ]
+   },
+   "122179": {
+      "regionCode": [
+         "ALL"
+      ],
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employee",
+            "cost": 10.51
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 20.11
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 40.31
+         },
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 35.21
+         }
+      ]
+   },
+   "125266": {
+      "regionCode": [
+         "ALL"
+      ],
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employee",
+            "cost": 1000.51
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 1200.11
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 1400.31
+         },
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 1300.21
+         }
+      ]
+   },
+   "125220": {
+      "regionCode": [
+         "ALL"
+      ],
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employee",
+            "cost": 100.51
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 170.11
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 200.31
+         },
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 180.21
+         }
+      ]
+   }
+}

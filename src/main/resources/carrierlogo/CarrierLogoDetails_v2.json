@@ -1,0 +1,62 @@
+{
+	"assets": [
+		{
+			"uid": "blt8fd10682b53de218",
+			"carrierNames": [
+				"Aetna",
+				"Aetna EyeMed",
+				"Aetna/EyeMed"
+			]
+		},
+		{
+			"uid": "blt1437049df98827eb",
+			"carrierNames": [
+				"Blue Cross",
+				"Blue Cross Blue Shield of North Carolina"
+			]
+		},
+		{
+			"uid": "blt9964af7d75f4cb7e",
+			"carrierNames": [
+				"Delta",
+				"Delta Dental"
+			]
+		},
+		{
+			"uid": "blt411d0045b9244221",
+			"carrierNames": [
+				"Guardian"
+			]
+		},
+		{
+			"uid": "blt060f4f2183aa3d1d",
+			"carrierNames": [
+				"Metalife",
+				"MetLife"
+			]
+		},
+		{
+			"uid": "blt2444a38af13110a2",
+			"carrierNames": [
+				"TriNet Plans"
+			]
+		},
+		{
+			"uid": "blt78aa7cc51eb33e6d",
+			"carrierNames": [
+				"VSP",
+				"Vision Service Plan (VSP)"
+			]
+		},
+		{
+			"uid": "blt36711c8d41c3fb08",
+			"carrierNames": [
+				"Kaiser Permanente",
+				"Kaiser Permanente CO/GA",
+				"Kaiser Permanente Hawaii",
+				"Kaiser Permanente NW/WA",
+				"Kaiser Permanente VA/MD"
+			]
+		}
+	]
+}

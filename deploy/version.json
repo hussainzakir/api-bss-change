@@ -1,0 +1,9 @@
+{
+  "bamboo_build_number":          "${bamboo.buildNumber}",
+  "bamboo_job_name":              "${bamboo.buildKey}",
+  "bamboo_build_url":             "${bamboo.buildResultsUrl}",
+  "bamboo_build_date":            "${bamboo.buildTimeStamp}",
+  "git_commit":                   "${bamboo.planRepository.1.revision}",
+  "git_branch":                   "${bamboo.planRepository.1.branch}",
+  "weblogic-application-version": "${weblogic-application-version}"
+}

@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="runTask" class="com.trinet.ambis.util.RunTask" />
+
+	<!-- Spring Quartz -->
+	<bean name="runJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.trinet.ambis.util.RunJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="runTask" value-ref="runTask" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- Simple Trigger -->
+	<bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		<property name="jobDetail" ref="runJob" />
+		<property name="repeatInterval" value="360000000" />
+		<property name="startDelay" value="10000" />
+	</bean>
+
+	<!-- Cron Trigger, run every 30 seconds -->
+<!-- 	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean"> -->
+<!-- 		<property name="jobDetail" ref="runJob" /> -->
+<!-- 		<property name="cronExpression" value="0 0/1 * * * ?" /> -->
+<!-- 	</bean> -->
+
+	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="runJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="simpleTrigger" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,343 @@
+[
+	{
+		"planId": "1",
+		"name": "FL Blue PPO 2000 NTL",
+		"benefitType": "Medical",
+		"carrier": "Florida Blue",
+		"template": [
+			{
+				"type": "Category",
+				"name": "Ouput Medical",
+				"displayOrder": 1,
+				"children": [
+					{
+						"type": "Category",
+						"name": "Deductible",
+						"displayOrder": 1,
+						"displayName": null,
+						"display": true,
+						"value": null,
+						"dataType": null,
+						"transformedValue": null,
+						"children": [
+							{
+								"type": "Attribute",
+								"name": "Single Deductible",
+								"displayOrder": 1,
+								"displayName": "Single",
+								"value": "$2,000",
+								"dataType": "CURRENCY",
+								"display": true,
+								"transformedValue": "2000",
+								"children": null,
+								"id": 6
+							}
+						],
+						"id": 0
+					},
+					{
+						"type": "Category",
+						"name": "Out of Pocket Max",
+						"displayOrder": 5,
+						"displayName": null,
+						"value": null,
+						"display": true,
+						"dataType": null,
+						"transformedValue": null,
+						"children": [
+							{
+								"type": "Attribute",
+								"name": "Single Out-of-Pocket Max",
+								"displayOrder": 5,
+								"displayName": "Single",
+								"value": "$5,000",
+								"dataType": "CURRENCY",
+								"display": true,
+								"transformedValue": "5000",
+								"children": null,
+								"id": 9
+							}
+						],
+						"id": 0
+					},
+					{
+						"type": "Attribute",
+						"name": "Co-Insurance",
+						"displayOrder": 9,
+						"displayName": " ",
+						"value": "30%",
+						"dataType": "PERCENTAGE",
+						"transformedValue": "30",
+						"children": null,
+						"id": 10
+					},
+					{
+						"type": "Attribute",
+						"name": "Co-Insurance Out-of-Network",
+						"displayOrder": 10,
+						"displayName": " ",
+						"value": "50%",
+						"dataType": "PERCENTAGE",
+						"transformedValue": "50",
+						"children": null,
+						"id": 1
+					},
+					{
+						"type": "Attribute",
+						"name": "Doctor Visits",
+						"displayOrder": 11,
+						"displayName": "Primary Care Visit",
+						"value": "$35",
+						"dataType": "STRING",
+						"transformedValue": "$35",
+						"children": null,
+						"id": 11
+					},
+					{
+						"type": "Attribute",
+						"name": "Specialist Visits",
+						"displayOrder": 12,
+						"displayName": "Specialist Visit",
+						"value": "$50",
+						"dataType": "STRING",
+						"transformedValue": "$50",
+						"children": null,
+						"id": 12
+					},
+					{
+						"type": "Attribute",
+						"name": "Lab & X-Ray",
+						"displayOrder": 13,
+						"displayName": "Lab & X-Ray",
+						"value": "$50",
+						"dataType": "STRING",
+						"transformedValue": "$50",
+						"children": null,
+						"id": 24
+					},
+					{
+						"type": "Attribute",
+						"name": "Rx Tier 2",
+						"displayOrder": 18,
+						"displayName": "Brand Rx (Tier 2)",
+						"value": "$40",
+						"dataType": "STRING",
+						"transformedValue": "$40",
+						"children": null,
+						"id": 16
+					},
+					{
+						"type": "Attribute",
+						"name": "Rx Tier 3",
+						"displayOrder": 19,
+						"displayName": "Non-Formulary Rx (Tier 3)",
+						"value": "$60",
+						"dataType": "STRING",
+						"transformedValue": "$60",
+						"children": null,
+						"id": 17
+					},
+					{
+						"type": "Attribute",
+						"name": "Network Name",
+						"displayOrder": 20,
+						"displayName": "Network Name",
+						"value": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+						"dataType": "STRING",
+						"transformedValue": "FL: Blue Options; nationally except Hawaii & Massachusetts through Blue Card",
+						"children": null,
+						"id": 21
+					},
+					{
+						"type": "Attribute",
+						"name": "Plan Type",
+						"displayOrder": 21,
+						"displayName": "Plan Type",
+						"value": "PPO",
+						"dataType": "STRING",
+						"transformedValue": "PPO",
+						"children": null,
+						"id": 5
+					},
+					{
+						"type": "Attribute",
+						"name": "HSA",
+						"displayOrder": 22,
+						"displayName": "HSA",
+						"value": "Yes",
+						"dataType": "STRING",
+						"transformedValue": "Yes",
+						"children": null,
+						"id": 4
+					}
+				]
+			}
+		]
+	},
+	{
+		"planId": "2",
+		"name": "UHC Primary 1000 Dallas",
+		"benefitType": "Medical",
+		"carrier": "UnitedHealthcare",
+		"template": [
+			{
+				"type": "Category",
+				"name": "Ouput Medical",
+				"displayOrder": 1,
+				"display": true,
+				"children": [
+					{
+						"type": "Category",
+						"name": "Deductible",
+						"displayOrder": 1,
+						"displayName": null,
+						"value": null,
+						"dataType": null,
+						"display": true,
+						"transformedValue": null,
+						"children": [
+							{
+								"type": "Attribute",
+								"name": "Single Deductible",
+								"displayOrder": 1,
+								"displayName": "Single",
+								"value": "$1,000",
+								"dataType": "CURRENCY",
+								"display": false,
+								"transformedValue": "1000",
+								"children": null,
+								"id": 6
+							},
+							{
+								"type": "Attribute",
+								"name": "Single Deductible Out-of-Network",
+								"displayOrder": 2,
+								"displayName": "Single",
+								"value": "$4,000",
+								"display": false,
+								"dataType": "STRING",
+								"transformedValue": "$4,000",
+								"children": null,
+								"id": 25
+							},
+							{
+								"type": "Attribute",
+								"name": "Single/family Deductible Out-of-Network",
+								"displayOrder": 2,
+								"displayName": "Single",
+								"value": "$1,000 / $4,000",
+								"display": true,
+								"dataType": "STRING",
+								"transformedValue": "$4,000",
+								"children": null,
+								"id": 25
+							},
+							{
+								"type": "Attribute",
+								"name": "Family Deductible",
+								"displayOrder": 3,
+								"displayName": "Family",
+								"value": "$2,000",
+								"display": true,
+								"dataType": "CURRENCY",
+								"transformedValue": "2000",
+								"children": null,
+								"id": 7
+							}
+						],
+						"id": 0
+					},
+					{
+						"type": "Category",
+						"name": "Out of Pocket Max",
+						"displayOrder": 5,
+						"displayName": null,
+						"value": null,
+						"dataType": null,
+						"transformedValue": null,
+						"children": [
+							{
+								"type": "Attribute",
+								"name": "Single Out-of-Pocket Max",
+								"displayOrder": 5,
+								"displayName": "Single",
+								"value": "$7,150",
+								"dataType": "CURRENCY",
+								"transformedValue": "7150",
+								"children": null,
+								"id": 9
+							}
+						],
+						"id": 0
+					},
+					{
+						"type": "Attribute",
+						"name": "Co-Insurance",
+						"displayOrder": 9,
+						"displayName": " ",
+						"value": "20%",
+						"dataType": "PERCENTAGE",
+						"transformedValue": "20",
+						"children": null,
+						"id": 10
+					},
+					{
+						"type": "Attribute",
+						"name": "Co-Insurance Out-of-Network",
+						"displayOrder": 10,
+						"displayName": " ",
+						"value": "50%",
+						"dataType": "PERCENTAGE",
+						"transformedValue": "50",
+						"children": null,
+						"id": 1
+					},
+					{
+						"type": "Attribute",
+						"name": "Doctor Visits",
+						"displayOrder": 11,
+						"displayName": "Primary Care Visit",
+						"value": "$0",
+						"dataType": "STRING",
+						"transformedValue": "$0",
+						"children": null,
+						"id": 11
+					},
+					{
+						"type": "Attribute",
+						"name": "Specialist Visits",
+						"displayOrder": 12,
+						"displayName": "Specialist Visit",
+						"value": "$75",
+						"dataType": "STRING",
+						"transformedValue": "$75",
+						"children": null,
+						"id": 12
+					},
+					{
+						"type": "Attribute",
+						"name": "Plan Type",
+						"displayOrder": 21,
+						"displayName": "Plan Type",
+						"value": "UHC",
+						"dataType": "STRING",
+						"transformedValue": "UHC",
+						"children": null,
+						"id": 5
+					},
+					{
+						"type": "Attribute",
+						"name": "HSA",
+						"displayOrder": 22,
+						"displayName": "HSA",
+						"value": "Yes",
+						"dataType": "STRING",
+						"transformedValue": "Yes",
+						"children": null,
+						"id": 4
+					}
+				]
+			}
+		]
+	}
+]

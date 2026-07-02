@@ -1,0 +1,156 @@
+{
+   "006CRY": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 70.43
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 70.46
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 34.37
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 106.54
+         }
+      ]
+   },
+   "005KW5": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 7.68
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 7.69
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 3.74
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 11.62
+         }
+      ]
+   },
+   "002C7M": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 2921
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 3308
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 1432
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 4338
+         }
+      ]
+   },
+   "004DT5": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 2280
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 2582
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 1118
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 3387
+         }
+      ]
+   },
+   "002C6O": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 3000
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 3396
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 1470
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 4456
+         }
+      ]
+   },
+   "TRINET_DENTAL_PLAN": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 70
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 60
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 50
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 80
+         }
+      ]
+   },
+   "TRINET_VISION_PLAN": {
+      "regionCode": null,
+      "rateType": "4Tier",
+      "tierRates": [
+         {
+            "cvgTierCode": "employeePlusChild",
+            "cost": 50
+         },
+         {
+            "cvgTierCode": "employeePlusSpouse",
+            "cost": 40
+         },
+         {
+            "cvgTierCode": "employee",
+            "cost": 30
+         },
+         {
+            "cvgTierCode": "employeePlusFamily",
+            "cost": 60
+         }
+      ]
+   }
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:test-api-messaging.properties" />
+	</bean>
+
+	<context:annotation-config />
+
+	<bean id="auditPublisherTemplate" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="org.springframework.amqp.core.AmqpTemplate" />
+	</bean>
+	
+	<bean id="apiPublisherTemplate" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="org.springframework.amqp.core.AmqpTemplate" />
+	</bean>
+	
+	<bean id="dataEventPublisher" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.publisher.DataEventPublisher" />
+	</bean>
+	
+	<bean id="auditMessagePublisher" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.publisher.AuditMessagePublisher" />
+	</bean>
+	
+	<bean id="platformMessageDelegate" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.employee.PlatformMessageDelegate" />
+	</bean>
+	
+	<bean id="jobXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.psft.mapper.JobXMLFormation" />
+	</bean>
+	
+	<bean id="leavePlanXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.psft.mapper.LeavePlanXMLFormation" />
+	</bean>
+	
+	<bean id="businessTitleXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.psft.mapper.BusinessTitleXMLFormation" />
+	</bean>
+	
+	<bean id="workersCompXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.psft.mapper.WorkersCompXMLFormation" />
+	</bean>
+	
+	<bean id="employeeTransferSOXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.crm.mapper.EmployeeTransferSOXMLFormation" />
+	</bean>
+	
+	<bean id="leaveRequestSOXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg
+			value="com.trinet.messaging.crm.mapper.LeaveRequestSOXMLFormation" />
+	</bean>
+	
+	<bean id="employeeRoleXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg 
+			value="com.trinet.messaging.fragomen.mapper.EmployeeRoleXMLFormation"/>
+	</bean>
+	
+	<bean id="jobUsrFldsXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg 
+			value="com.trinet.messaging.psft.mapper.OptionalGroupXMLFormation"/>
+	</bean>
+	
+	<bean id="ldapRoleXMLFormation" class="org.mockito.Mockito"
+		factory-method="mock">
+		<constructor-arg 
+			value="com.trinet.messaging.platform.mapper.LdapRoleXMLFormation"/>
+	</bean>
+
+        <bean id="addlPayXMLFormation" class="org.mockito.Mockito"
+                factory-method="mock">
+                <constructor-arg
+                        value="com.trinet.messaging.psft.mapper.AddlPayXMLFormation"/>
+        </bean>
+	
+</beans>

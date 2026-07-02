@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+			xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+			http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+
+	<persistence-unit name="bis-sysadm" transaction-type="RESOURCE_LOCAL">
+		<jta-data-source>jndi/hrdb_seeker</jta-data-source>
+		<properties>
+			<property name="hibernate.transaction.manager_lookup_class"
+						value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle11gDialect" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.use_sql_comments" value="false" />
+			<property name="hibernate.jdbc.batch_size" value="128" />
+			<property name="hibernate.jdbc.fetch_size" value="64"/>
+			<property name="hibernate.order_inserts" value="true" />
+			<property name="hibernate.order_updates" value="true"/>
+		</properties>
+	</persistence-unit>
+
+
+	<persistence-unit name="bis-hrp" transaction-type="RESOURCE_LOCAL">
+		<jta-data-source>jndi/hpdb_hrdb</jta-data-source>
+		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+		<properties>
+			<property name="hibernate.transaction.manager_lookup_class"
+						value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle11gDialect" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.use_sql_comments" value="false" />
+			<property name="hibernate.generate_statistics" value="false"/>
+			<property name="hibernate.jdbc.batch_size" value="128" />
+			<property name="hibernate.jdbc.fetch_size" value="64"/>
+			<property name="hibernate.order_inserts" value="true" />
+			<property name="hibernate.order_updates" value="true"/>
+			<property name="hibernate.max_fetch_depth" value="0"/>
+			<property name="hibernate.use_outer_join" value="true"/>
+		</properties>
+	</persistence-unit>
+
+</persistence>

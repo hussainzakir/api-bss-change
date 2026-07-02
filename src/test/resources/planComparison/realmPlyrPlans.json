@@ -1,0 +1,68 @@
+{
+   "11": [
+      {
+         "id": 55993,
+         "benefitPlan": "006CRY",
+         "planType": "11",
+         "portfolioId": 1,
+         "realmYearId": 63,
+         "situs": null,
+         "bandLocator": null,
+         "highDeductible": false,
+         "planCategory": "DFLT",
+         "widelyAvailable": false
+      }
+   ],
+   "14": [
+      {
+         "id": 56047,
+         "benefitPlan": "005KW5",
+         "planType": "14",
+         "portfolioId": 15,
+         "realmYearId": 63,
+         "situs": null,
+         "bandLocator": null,
+         "highDeductible": false,
+         "planCategory": "DFLT",
+         "widelyAvailable": false
+      }
+   ],
+   "10": [
+      {
+         "id": 55299,
+         "benefitPlan": "002C7M",
+         "planType": "10",
+         "portfolioId": 1,
+         "realmYearId": 63,
+         "situs": "TX",
+         "bandLocator": "7",
+         "highDeductible": false,
+         "planCategory": "DFLT",
+         "widelyAvailable": true
+      },
+      {
+         "id": 55534,
+         "benefitPlan": "004DT5",
+         "planType": "10",
+         "portfolioId": 1,
+         "realmYearId": 63,
+         "situs": "TX",
+         "bandLocator": "7",
+         "highDeductible": true,
+         "planCategory": "DFLT",
+         "widelyAvailable": true
+      },
+      {
+         "id": 55274,
+         "benefitPlan": "002C6O",
+         "planType": "10",
+         "portfolioId": 1,
+         "realmYearId": 63,
+         "situs": "TX",
+         "bandLocator": "7",
+         "highDeductible": false,
+         "planCategory": "DFLT",
+         "widelyAvailable": true
+      }
+   ]
+}

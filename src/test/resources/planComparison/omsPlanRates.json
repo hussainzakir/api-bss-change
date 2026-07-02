@@ -1,0 +1,234 @@
+{
+  "OMS_MEDICAL_PLAN1": {
+    "regionCode": null,
+    "rateType": "4Tier",
+    "tierRates": [
+      {
+        "cvgTierCode": "employeePlusChild",
+        "cost": 700.43
+      },
+      {
+        "cvgTierCode": "employeePlusSpouse",
+        "cost": 600.46
+      },
+      {
+        "cvgTierCode": "employee",
+        "cost": 500.37
+      },
+      {
+        "cvgTierCode": "employeePlusFamily",
+        "cost": 800.54
+      }
+    ]
+  },
+  "OMS_MEDICAL_PLAN2": {
+    "regionCode": null,
+    "rateType": "ageBanded",
+    "tierRates": [
+      {
+        "tierCode": "0",
+        "rate": 317.5
+      },
+      {
+        "tierCode": "15",
+        "rate": 345.73
+      },
+      {
+        "tierCode": "16",
+        "rate": 356.52
+      },
+      {
+        "tierCode": "17",
+        "rate": 367.31
+      },
+      {
+        "tierCode": "18",
+        "rate": 378.93
+      },
+      {
+        "tierCode": "19",
+        "rate": 390.55
+      },
+      {
+        "tierCode": "20",
+        "rate": 402.59
+      },
+      {
+        "tierCode": "21",
+        "rate": 415.04
+      },
+      {
+        "tierCode": "22",
+        "rate": 415.04
+      },
+      {
+        "tierCode": "23",
+        "rate": 415.04
+      },
+      {
+        "tierCode": "24",
+        "rate": 415.04
+      },
+      {
+        "tierCode": "25",
+        "rate": 416.7
+      },
+      {
+        "tierCode": "26",
+        "rate": 425.0
+      },
+      {
+        "tierCode": "27",
+        "rate": 434.96
+      },
+      {
+        "tierCode": "28",
+        "rate": 451.15
+      },
+      {
+        "tierCode": "29",
+        "rate": 464.43
+      },
+      {
+        "tierCode": "30",
+        "rate": 471.07
+      },
+      {
+        "tierCode": "31",
+        "rate": 481.03
+      },
+      {
+        "tierCode": "32",
+        "rate": 490.99
+      },
+      {
+        "tierCode": "33",
+        "rate": 497.22
+      },
+      {
+        "tierCode": "34",
+        "rate": 503.86
+      },
+      {
+        "tierCode": "35",
+        "rate": 507.18
+      },
+      {
+        "tierCode": "36",
+        "rate": 510.5
+      },
+      {
+        "tierCode": "37",
+        "rate": 513.82
+      },
+      {
+        "tierCode": "38",
+        "rate": 517.14
+      },
+      {
+        "tierCode": "39",
+        "rate": 523.78
+      },
+      {
+        "tierCode": "40",
+        "rate": 530.42
+      },
+      {
+        "tierCode": "41",
+        "rate": 540.38
+      },
+      {
+        "tierCode": "42",
+        "rate": 549.93
+      },
+      {
+        "tierCode": "43",
+        "rate": 563.21
+      },
+      {
+        "tierCode": "44",
+        "rate": 579.81
+      },
+      {
+        "tierCode": "45",
+        "rate": 599.32
+      },
+      {
+        "tierCode": "46",
+        "rate": 622.56
+      },
+      {
+        "tierCode": "47",
+        "rate": 648.71
+      },
+      {
+        "tierCode": "48",
+        "rate": 678.59
+      },
+      {
+        "tierCode": "49",
+        "rate": 708.06
+      },
+      {
+        "tierCode": "50",
+        "rate": 741.26
+      },
+      {
+        "tierCode": "51",
+        "rate": 774.05
+      },
+      {
+        "tierCode": "52",
+        "rate": 810.16
+      },
+      {
+        "tierCode": "53",
+        "rate": 846.68
+      },
+      {
+        "tierCode": "54",
+        "rate": 886.11
+      },
+      {
+        "tierCode": "55",
+        "rate": 925.54
+      },
+      {
+        "tierCode": "56",
+        "rate": 968.29
+      },
+      {
+        "tierCode": "57",
+        "rate": 1011.45
+      },
+      {
+        "tierCode": "58",
+        "rate": 1057.52
+      },
+      {
+        "tierCode": "59",
+        "rate": 1080.35
+      },
+      {
+        "tierCode": "60",
+        "rate": 1126.42
+      },
+      {
+        "tierCode": "61",
+        "rate": 1166.26
+      },
+      {
+        "tierCode": "62",
+        "rate": 1192.41
+      },
+      {
+        "tierCode": "63",
+        "rate": 1225.19
+      },
+      {
+        "tierCode": "64",
+        "rate": 1245.12
+      }
+    ]
+  }
+}

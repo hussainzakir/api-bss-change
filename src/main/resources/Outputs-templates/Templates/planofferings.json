@@ -1,0 +1,1546 @@
+{
+   "11": {
+				"attributeNames": [
+					{
+						"type": "category",
+						"desc": null,
+						"name": "Deductible",
+						"children": [
+							{
+								"type": "attribute",
+								"desc": null,
+								"name": "Single (In-Network/OON)",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"desc": null,
+								"name": "Family (In-Network/OON)",
+								"children": null
+							}
+						]
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Preventative (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Basic (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Major (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Annual Maximum (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Orthodontia Lifetime Maximum (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Orthodontia (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Waiting Period - Major (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Endo/Perio/Oral Surgery",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "National Network Specifics",
+						"children": null
+					}
+				],
+				"planAttributes": [
+					{
+						"planName": "Aetna Dental Value Vol",
+						"planId": "006CV7",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$50 / $50",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$150 / $150",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "50% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "30% / 30%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$1,000 / $1,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Not Covered / Not Covered",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Not Covered / Not Covered",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Major/Major/Split",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna Dental 0 LA Vol",
+						"planId": "006CV8",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$400 / $0",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$1000 / $0",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "90% / 80%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "65% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$3,500 / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$3,500 / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "60% / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Basic/Basic/Basic",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna Dental 50 Vol",
+						"planId": "006CV5",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$50 / $100",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$150 / $300",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "90% / 80%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "65% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$1,500 / $1,500",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$1,500 / Combined With In-Network",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "50% / Combined With In-Network",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Split/ Basic/ Split",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna Dental 100 Vol",
+						"planId": "006CV6",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$100 / $150",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$300 / $450",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "70% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "50% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$2,000 / $1,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Not Covered / Not Covered",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Not Covered / Not Covered",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Major/ Major/ Major",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna Dental 0 Vol",
+						"planId": "006CV4",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$400 / $0",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$1000 / $0",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "90% / 80%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "65% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$3,500 / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$3,500 / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "60% / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Basic/Basic/Basic",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna Dental 50 LA Vol",
+						"planId": "006CV9",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$50 / $100",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$150 / $300",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "90% / 80%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "65% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$1,500 / $1,500",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$1,500 / Combined With In-Network",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "50% / Combined With In-Network",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Split/ Basic/ Split",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna Dental 0 MT Vol",
+						"planId": "006CVG",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$400 / $0",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$1000 / $0",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "100% / 100%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "90% / 80%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "65% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$3,500 / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$3,500 / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "60% / $2,000",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "None / None",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Basic/Basic/Basic",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Nationwide - Dental PPO/PDN with PPO II",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					}
+				]
+			},
+			"1V": {
+				"attributeNames": [
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Examination Copay (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Materials Copay (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Frames Allowance (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Examination Frequency",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Frames Frequency",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Lenses or Contact Lens Frequency",
+						"children": null
+					}
+				],
+				"planAttributes": [
+					{
+						"planName": "VSP Vision Plus Vol",
+						"planId": "002M8I",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "attribute",
+								"value": "$15 / Reimbursed up to $50",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25 / Reimbursed up to $50/$75/$100 Single/Bifocal/Trifocal",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$150 / Reimbursed up to $75",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "VSP Vision Vol",
+						"planId": "002M8G",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "attribute",
+								"value": "$10 / Reimbursed up to $45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25 / Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$130 / Reimbursed up to $47",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 24 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna EyeMed Plus Vol",
+						"planId": "005KXC",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "attribute",
+								"value": "$10 / Reimbursed up to $50",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25 / Reimbursed up to $50/$75/$100 Single/Bifocal/Trifocal",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$150 / Reimbursed up to $75",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "Aetna EyeMed Vol",
+						"planId": "005KX8",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "attribute",
+								"value": "$16 / Reimbursed up to $45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$27 / Reimbursed up to $45/$65/$85 Single/Bifocal/Trifocal",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$130 / Reimbursed up to $47",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 10 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 24 months",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "Every 12 months",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					}
+				]
+			},
+			"10": {
+				"attributeNames": [
+					{
+						"type": "category",
+						"desc": null,
+						"name": "Deductible",
+						"children": [
+							{
+								"type": "attribute",
+								"desc": null,
+								"name": "Single (In-Network/OON)",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"desc": null,
+								"name": "Family (In-Network/OON)",
+								"children": null
+							}
+						]
+					},
+					{
+						"type": "category",
+						"desc": null,
+						"name": "Out-of-Pocket Max",
+						"children": [
+							{
+								"type": "attribute",
+								"desc": null,
+								"name": "Single (In-Network/OON)",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"desc": null,
+								"name": "Family (In-Network/OON)",
+								"children": null
+							}
+						]
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Coinsurance (In-Network/OON)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Primary Care Visit",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Specialist Visit",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Lab & X-Ray",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Urgent Care Visit",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Emergency Room Visit",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Rx Deductible (Non-Generic)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Generic Rx (Tier 1)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Brand Rx (Tier 2)",
+						"children": null
+					},
+					{
+						"type": "attribute",
+						"desc": null,
+						"name": "Non-Formulary Rx (Tier 3)",
+						"children": null
+					}
+				],
+				"planAttributes": [
+					{
+						"planName": "AETNA PPO 5000 Midwest",
+						"planId": "002M92",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$5,000 / $10,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$10,000 / $30,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$6,850 / $20,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$13,700 / $60,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "30% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$40",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$80",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "30% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$85",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$350",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "AETNA PPO 6350 Midwest",
+						"planId": "002M93",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$6,350 / $14,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$12,700 / $28,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$6,850 / $21,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$13,700 / $42,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "0% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "0% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "0% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "0% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "0% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "AETNA PPO 750 Midwest",
+						"planId": "002M94",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$750 / $2,250",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$1,500 / $4,500",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$3,000 / $8,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$6,000 / $16,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "10% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$50",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "10% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$85",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$350",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "AETNA PPO Choice 1000 MO",
+						"planId": "002M8T",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$1,000 / $3,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$2,000 / $6,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$4,500 / $9,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$9,000 / $18,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "20% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$50",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "20% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$85",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$350",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "AETNA PPO 300 Midwest",
+						"planId": "002M90",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$300 / $1,200",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$900 / $3,600",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$3,000 / $6,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$6,000 / $18,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "10% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$20",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$40",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "10% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$85",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$350",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "AETNA PPO 3000 Midwest",
+						"planId": "002M91",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$3,000 / $7,500",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$6,000 / $22,500",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$4,500 / $10,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$9,000 / $30,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "0% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$30",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$60",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "0% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$85",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$350",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					},
+					{
+						"planName": "AETNA PPO 1000 Midwest",
+						"planId": "002M8Y",
+						"carrierName": null,
+						"planType": null,
+						"region": null,
+						"attributeValues": [
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$1,100 / $3,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$2,000 / $6,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "category",
+								"value": "--",
+								"children": [
+									{
+										"type": "attribute",
+										"value": "$4,500 / $9,000",
+										"children": null
+									},
+									{
+										"type": "attribute",
+										"value": "$9,000 / $18,000",
+										"children": null
+									}
+								]
+							},
+							{
+								"type": "attribute",
+								"value": "20% / 50%",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$25",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$50",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "20% after ded",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$85",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$350",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "N/A",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$10",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$45",
+								"children": null
+							},
+							{
+								"type": "attribute",
+								"value": "$70",
+								"children": null
+							}
+						],
+						"planRates": null,
+						"headCount": null
+					}
+				]
+			}
+		}

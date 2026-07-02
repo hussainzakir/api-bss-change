@@ -1,0 +1,32 @@
+[
+   {
+      "benefitPlan": "002C6O",
+      "covrgCD": "1",
+      "count": 2
+   },
+   {
+      "benefitPlan": "002C7M",
+      "covrgCD": "1",
+      "count": 2
+   },
+   {
+      "benefitPlan": "004DT5",
+      "covrgCD": "1",
+      "count": 1
+   },
+   {
+      "benefitPlan": "004DT5",
+      "covrgCD": "2",
+      "count": 1
+   },
+   {
+      "benefitPlan": "005KW5",
+      "covrgCD": "4",
+      "count": 6
+   },
+   {
+      "benefitPlan": "006CRY",
+      "covrgCD": "C",
+      "count": 6
+   }
+]
