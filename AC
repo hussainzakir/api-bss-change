@@ -1,0 +1,145 @@
+API - Create GET API to Fetch All Active Life & Disability Band Overrides
+
+
+
+Key details
+Description
+
+
+As an Administrator, I want an API to retrieve all active Life & Disability band override records So that users can view existing overrides in the Admin App grid.  Acceptance Criteria
+AC1 – Fetch Active Overrides
+Given a valid GET request is made When the API GET api-bss/v1.0/benefits/{companyId}/{employeeId}/life-dis-band-overrides is invoked Then the system retrieves all active override records from the database And returns them in the expected response format
+
+AC2 
+Given the endpoint is called When the controller method executes Then:
+	•	lifeDisabilityBandOverrideService.findAllActive() is called
+	•	The result is returned directly
+
+AC3 
+Given the service throws a anyRuntimeException When the endpoint is called Then:
+	•	The exception is not handled in controller
+	•	It propagates as-is
+
+AC4 – Empty Response Handling
+Given no active records exist When the API is invoked Then the system returns an empty list with HTTP 200 response
+
+Technical Details
+API Layer
+	•	Controller: LifeDisabilityBandOverrideController.java
+	•	Method: GET
+	•	Endpoint:        api-bss/v1.0/benefits/{companyId}/{employeeId}/life-dis-band-overrides
+	•	  
+	•	URI defined in URIConstants.java
+	◦	GET_LIFE_DIS_BAND_OVERRIDES
+	•	write junit test cases
+	•	Cover E2E testing
+ 
+Database: Add ACL Entry & roles - BMG Sample one : check endpoint properly
+
+
+INSERT INTO API_ENDPOINT_ACLS(APP_ID,
+                              HTTP_ENDPOINT,
+                              HTTP_METHOD,
+                              ROLES,
+                              PATTERN_ID,
+                              CONTENT_TYPE,
+                              REQUEST_SCHEMA,
+                              RESPONSE_SCHEMA,
+                              DEPLOYMENT_GROUP,
+                              IS_ACTIVE,
+                              REASON,
+                              ACTION,
+                              ACTION_TIMESTAMP,
+                              OPRTR_PERSONID)
+VALUES ((SELECT ID FROM API_APPS_DETAILS WHERE NAME = '/api-bss' and rownum = 1),
+        '/v1.0/benefits/{companyId}/{employeeId}/life-dis-band-overrides/{companyCode}',
+        'GET',
+        '@authorizationChecks.hasTrinetRole(''BMG'')',
+        1,
+        ' ',
+        null,
+        null,
+        null,
+        'Y',
+        'Create',
+        'L',
+        SYSTIMESTAMP,
+        'Oprtr');
+
+Response Example
+
+
+
+
+
+Get All Active Overrides
+Response:
+[
+  {
+    "id":                     1001,
+    "companyCode":            "L13",
+    "companyName":            "M Comp 1831 Vend Inc.",
+    "startDate":              "2026-05-25",
+    "endDate":                "2026-12-31",
+    "overrideLifeBand":       "1",
+    "overrideDisabilityBand": "1",
+    "active":                 true,
+    "approverId":             "00002340287",
+    "approverName":           "Cynthea D Markarian",
+    "exchange": "TriNet III",
+    "quarter":                "Q2"
+  },
+  {
+    "id":                     1002,
+    "companyCode":            "X77",
+    "companyName":            "Acme Corp Solutions LLC",
+    "startDate":              "2026-01-01",
+    "endDate":                "2026-06-30",
+    "overrideLifeBand":       "1",
+    "overrideDisabilityBand": "1",
+    "active":                 true,
+    "approverId":             "00001122334",
+    "approverName":           "Robert T Williams",
+    "exchange": "TriNet III",
+    "quarter":                "Q2"
+  }
+]
+
+
+
+
+
+As an Administrator, I need to retrieve all currently active override records, so that the UI can display all active overrides.  Acceptance Criteria
+AC1: Retrieve Active Overrides with Details
+Given multiple active override records exist in XBSS_LIFE_DIS_BAND_OVERRIDE When findAllActive() is called Then:
+	•	Only records where the current date falls between startDate and endDate are returned
+	•	Each record should include:
+	◦	approverName
+	◦	createdByName
+	◦	lastUpdatedByName
+	◦	companyName
+	◦	exchange
+
+AC2:
+Given 3 active override records exist, each with different approverId and companyCode When findAllActive() is called Then:
+	•	psDao.getEmployeesFullName(employeeIds) is called exactly once with all employee IDs batched
+	•	psCompanyDao.findCompaniesNames(companyCodes) is called exactly once with all company codes batched
+
+AC3
+Given no active override records exist When findAllActive() is called Then:
+	•	An empty list is returned
+	•	No exception is thrown
+
+Technical Details
+Class: LifeDisabilityBandOverrideServiceImpl
+	•	create findAllActive() method 
+	•	create DAO call: lifeDisabilityBandOverrideDao.findByActive(true) → Set<LifeDisabilityBandOverride>
+	•	check current date should between the startdate and enddate
+	•	create fetchEmployeeNames method, call psDao.getEmployeesFullName(emplIds) and set below fields to response
+	◦	setApproverName
+	◦	setCreatedByName
+	◦	setLastUpdatedByName
+	•	createfetchCompanyNames method, psCompanyDao.findCompaniesNames(companyCodes) and set below fields to response
+	◦	setCompanyName
+	•	setExchange(BenExchngEnums.getById(entity.getRealmId()).getBenExchng())
+	•	write Junit test cases
